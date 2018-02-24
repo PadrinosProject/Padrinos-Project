@@ -6,6 +6,11 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
+const passport     = require('passport');
+const passportSession = require('passport-session');
+const bcrypt       = require ('bcrypt');
+const multer       = require ('multer');
+const axios        = require ('axios');
 
 
 mongoose.connect('mongodb://localhost/padrinos-project');
