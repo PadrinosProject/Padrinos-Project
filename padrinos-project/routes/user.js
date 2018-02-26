@@ -1,4 +1,6 @@
 //View Profile
+const express = require('express');
+const router  = express.Router();
 
 router.get('/view-profile', (req,res,next) => {
   res.render('/view-profile');
