@@ -11,11 +11,18 @@ const passportSession = require('passport-session');
 const bcrypt       = require ('bcrypt');
 const multer       = require ('multer');
 const axios        = require ('axios');
+const session      = require ('express-session');
+const localStrategy = require ('passport-local').Strategy;
 
 
 mongoose.connect('mongodb://localhost/padrinos-project');
 
 const app = express();
+
+const index = require('./routes/index');
+const auth = require('./routes/auth');
+const events = require('./routes/events');
+const user = require('./routes/user');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -36,9 +43,19 @@ app.use(layouts);
 app.set('layout', 'layouts/main-layout');
 app.set('views', __dirname + '/views');
 
+//Passport config
+require('./config/passport')(app);
 
-const index = require('./routes/index');
+//Use Routes
 app.use('/', index);
+
+//Session
+app.use(session({
+  secret: "padrinosApp",
+  resave: true,
+  saveUninitialized: true
+}));
+
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
