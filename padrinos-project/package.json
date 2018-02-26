@@ -10,11 +10,8 @@
     "axios": "^0.18.0",
     "bcrypt": "^1.0.3",
     "body-parser": "~1.16.0",
-<<<<<<< HEAD
     "connect-mongo": "^2.0.1",
-=======
     "connect-ensure-login": "^0.1.1",
->>>>>>> ba72e303f1c81fb4ab58b06041038128bd4e621d
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.0",
     "ejs": "~2.5.5",
