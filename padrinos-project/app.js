@@ -1,3 +1,4 @@
+const config       = require ("./config")
 const express      = require('express');
 const path         = require('path');
 const favicon      = require('serve-favicon');
@@ -6,13 +7,10 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
-const passport     = require('passport');
-const passportSession = require('passport-session');
-const bcrypt       = require ('bcrypt');
 const multer       = require ('multer');
 const axios        = require ('axios');
 const session      = require ('express-session');
-const localStrategy = require ('passport-local').Strategy;
+const MongoStore   = require('connect-mongo')(session);
 
 
 mongoose.connect('mongodb://localhost/padrinos-project');
