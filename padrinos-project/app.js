@@ -18,9 +18,9 @@ mongoose.connect('mongodb://localhost/padrinos-project');
 const app = express();
 
 const index = require('./routes/index');
-const auth = require('./routes/auth');
-const events = require('./routes/events');
-const user = require('./routes/user');
+const authController = require('./routes/auth');
+const newEvent = require('./routes/events')
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -35,17 +35,21 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.set('views', __dirname + '/views');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
 //I added this for layouts
 app.set('layout', 'layouts/main-layout');
-app.set('views', __dirname + '/views');
 
 //Passport config
 require('./config/passport')(app);
 
 //Use Routes
 app.use('/', index);
+app.use('/', authController);
+app.use('/', newEvent);
+
+
 
 //Session
 app.use(session({
@@ -74,3 +78,6 @@ app.use((err, req, res, next) => {
 });
 
 module.exports = app;
+
+
+

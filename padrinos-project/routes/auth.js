@@ -6,6 +6,7 @@ const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
 
 
 router.get('/login', ensureLoggedOut(), (req, res) => {
+    console.log('djfds')
     res.render('authentication/login');
 });
 
