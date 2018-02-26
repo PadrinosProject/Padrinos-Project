@@ -4,8 +4,8 @@ const router  = express.Router();
 const { ensureLoggedIn }  = require('connect-ensure-login');
 //Multer for event image upload
 const multer  = require('multer');
-const upload = multer({ dest: './public/uploads/' });
-const User = require ("../models/User.js");
+const upload = multer({ dest: './public/uploads/event-image' });
+const User = require ("../models/Event.js");
 
 //Create Event
 
@@ -15,8 +15,14 @@ router.get('/new', (req,res,next) => {
 
 //View Event
 
-router.get('/view-events', (req,res,next) => {
-  res.render('/view-events');
+router.get('/listEvent', (req,res,next) => {
+  res.render('/listEvent');
+});
+
+//View Event
+
+router.get('/listEvent/:id', (req,res,next) => {
+  res.render('/singleEvent');
 });
 
 

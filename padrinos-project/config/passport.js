@@ -1,9 +1,9 @@
 //From Andrei's Funding Example
-
 const LocalStrategy      = require('passport-local').Strategy;
 const User               = require('../models/User');
 const bcrypt             = require('bcrypt');
-const passport = require ("passport")
+const passport           = require ("passport");
+const passportSession    = require ("passport-session");
 
 module.exports = function (app) {
   // NEW
@@ -34,15 +34,14 @@ module.exports = function (app) {
                   return next(null, false);
               } else {
                   // Destructure the body
-                  const { username, email, description, password } = req.body;
+                  const { username, email, password } = req.body;
                   const hashPass = bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
                   const newUser = new User({
                     username,
                     email,
-                    description,
-                    password: hashPass
+                    password: hashPass,
+                    photo,
                   });
-  
                   newUser.save((err) => {
                       if (err){ next(err); }
                       return next(null, newUser);
@@ -66,8 +65,8 @@ module.exports = function (app) {
       return next(null, user);
     });
   }));
+
   // NEW
-  
   app.use(passport.initialize());
   app.use(passport.session());
 
