@@ -32,7 +32,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
-
+//I added this for layouts
+app.set('layout', 'layouts/main-layout');
+app.set('views', __dirname + '/views');
 
 
 const index = require('./routes/index');

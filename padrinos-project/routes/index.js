@@ -13,13 +13,13 @@ router.post('/', (req, res, next) => {
 //Signup
 
 router.get('/signup', (req, res, next) => {
-  res.render('/signup');
+  res.render('signup');
 });
 
 //Login
 
 router.get('/login', (req, res, next) => {
-  res.render('/login');
+  res.render('login');
 });
 
 router.post('/login', (req, res, next) => {
