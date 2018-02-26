@@ -21,10 +21,22 @@ h2{
 
 }
 
+.sub1{
+  font-family: "Roboto", Roboto, arial, sans-serif;
+  color:white;
+  font-size: 40px;
+  display: flex;
+  padding-top: 2em;
+
+
+}
+
 h6{
   position: absolute;
   right: 370px;
   bottom: 150px;
+  font-family: "Roboto", Roboto, arial, sans-serif;
+  font-weight: lighter;
 }
 
 p{
@@ -40,6 +52,7 @@ label{
 
 span{
   font-family: "Roboto", Roboto, arial, sans-serif;
+  margin-left: 40px;
  
 }
 
@@ -83,13 +96,6 @@ input[type=password]:focus {
   border-left:1px solid white;
 }
 
-/* .divider2{
-  position:absolute;
-  right: 450px;
-  top:10%;
-  bottom:10%;
-  border-left:1px solid white;
-} */
 
 .btn-1 , .btn-2{
   position: absolute;
@@ -166,6 +172,7 @@ input[type=password]:focus {
 .loginBtn--google {
   font-family: "Roboto", Roboto, arial, sans-serif;
   background: #DD4B39;
+  margin-left: 25px;
 }
 .loginBtn--google:before {
   border-right: #BB3F30 1px solid;

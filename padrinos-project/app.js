@@ -21,7 +21,10 @@ const app = express();
 
 const index = require('./routes/index');
 const authController = require('./routes/auth');
-const newEvent = require('./routes/events')
+const viewEvent = require('./routes/events');
+const newEvent = require('./routes/events');
+
+
 
 
 // view engine setup
@@ -49,7 +52,11 @@ require('./config/passport')(app);
 //Use Routes
 app.use('/', index);
 app.use('/', authController);
+app.use ('/', viewEvent);
 app.use('/', newEvent);
+
+
+
 
 
 
