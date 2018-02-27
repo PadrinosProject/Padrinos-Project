@@ -1,5 +1,6 @@
 //From Andrei's Funding Example
 const LocalStrategy      = require('passport-local').Strategy;
+const FbStrategy         = require('passport-facebook').Strategy;
 const User               = require('../models/User');
 const bcrypt             = require('bcrypt');
 const passport           = require("passport");
@@ -81,6 +82,34 @@ module.exports = function (app) {
       }
       return next(null, user);
     });
+  }));
+
+  //Sign in with Facebook
+  passport.use(new FbStrategy({
+    clientID: "343564306134625",
+    clientSecret: "2657327f68385ea4aaf530245bf34624",
+    callbackURL: "/auth/facebook/callback"//UPDATE THIS?
+  }, (accessToken, refreshToken, profile, done) => {
+    User.findOne({ facebookID: profile.id }, (err, user) => {
+      if (err) {
+        return done(err);
+      }
+      if (user) {
+        return done(null, user);
+      }
+  
+      const newUser = new User({
+        facebookID: profile.id
+      });
+  
+      newUser.save((err) => {
+        if (err) {
+          return done(err);
+        }
+        done(null, newUser);
+      });
+    });
+  
   }));
 
   // NEW

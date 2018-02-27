@@ -7,7 +7,11 @@ const UserSchema = Schema({
   username: String,
   email:    String,
   password: String,
-  photo:    String
+  photo:    String,
+  facebookID: String,
+  googleID: String
+}, {
+  timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });
 
 const User = mongoose.model('User', UserSchema);
