@@ -11,11 +11,11 @@ const User    = require("../models/User");
 //Create Event
 
 router.get('/new', ensureLogin.ensureLoggedIn(), (req,res,next) => {
-  res.render('./event/new', {user: req.user});
+  res.render('event/new', {user: req.user});
 });
 
 router.post('/new', (req,res,next) => {
-  res.render('./event/new');
+  res.render('event/new');
 });
 
 //View Event
