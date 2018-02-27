@@ -1,4 +1,4 @@
-const config       = require ("./config")
+// const config       = require ("./config")
 const express      = require('express');
 const path         = require('path');
 const favicon      = require('serve-favicon');
@@ -21,8 +21,6 @@ const index = require('./routes/index');
 const authController = require('./routes/auth');
 const viewEvent = require('./routes/events');
 const newEvent = require('./routes/events');
-
-
 
 
 // view engine setup
@@ -52,10 +50,6 @@ app.use('/', index);
 app.use('/', authController);
 app.use ('/', viewEvent);
 app.use('/', newEvent);
-
-
-
-
 
 
 //Session
