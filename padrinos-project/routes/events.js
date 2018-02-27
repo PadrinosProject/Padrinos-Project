@@ -11,13 +11,13 @@ const Event = require ("../models/Event.js");
 //Create Event
 
 router.get('/new', (req,res,next) => {
-  res.render('./event/new');
+  res.render('event/new');
 });
 
 //View Event
 
 router.get('/view-events', (req,res,next) => {
-  res.render('./event/view-events');
+  res.render('event/view-events');
 });
 
 

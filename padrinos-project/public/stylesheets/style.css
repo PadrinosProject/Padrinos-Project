@@ -1,5 +1,4 @@
 body { 
-  padding: 5em;
   color: white;
   font-size: 19px;  
   background-color:	 #9f38a8;
@@ -110,24 +109,27 @@ input[type=password]:focus {
 
 .btn{
   position: absolute;
-  top:30px;
+  bottom:10px;
   right: 200px;
   margin-top:80px;
+
 
 }
 .btn2{
   position: absolute;
-  top:30px;
   right: 30px;
   border-radius:.25rem;
   padding: .250rem .75rem;
   margin-right: 60px;
   margin-top:80px;
+  bottom:10px;
+
 
 }
 
-a{
-  color:white;
+
+.navbar-light .navbar-text a{
+  color: white;
 }
 
 
