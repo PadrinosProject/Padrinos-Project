@@ -1,17 +1,21 @@
 const express = require('express');
 const router  = express.Router();
-
 //Ensure user is logged in
 const { ensureLoggedIn }  = require('connect-ensure-login');
 //Multer for event image upload
 const multer  = require('multer');
-const upload = multer({ dest: './public/uploads/event-image' });
-const Event = require ("../models/Event.js");
+const upload  = multer({ dest: './public/uploads/event-image' });
+const Event   = require ("../models/Event.js");
+const User    = require("../models/User");
 
 //Create Event
 
-router.get('/new', (req,res,next) => {
-  res.render('./event/new');
+router.get('/new', ensureLogin.ensureLoggedIn(), (req,res,next) => {
+  res.render('./event/new', {user: req.user});
+});
+
+router.post('/new', (req,res,next) => {
+  res.render('./event/new', {bo});
 });
 
 //View Event
@@ -19,9 +23,6 @@ router.get('/new', (req,res,next) => {
 router.get('/view-events', (req,res,next) => {
   res.render('./event/view-events');
 });
-
-
-
 
 
 module.exports = router;
