@@ -144,3 +144,63 @@ module.exports = function (app) {
   app.use(passport.initialize());
   app.use(passport.session());
 }
+
+/* heroku --version
+make sure to npm i
+npm start
+monitor server
+git checkout master
+git merge dev
+check for errors
+npm i to ensure things are working
+test page
+dashboard.heroku.com
+heroku create
+change databases in all parts of document to mlab database (this is mongo)
+do a mlab db deployment
+learn about sharding and replication sets. Less DBs = faster performance for sandbox.
+select AWS for cloud provider, since it's free up to .5 gigs (in mlab)
+select the closest DB 
+naming convention of DB: keep in mind that these are just for administrators of the app for their use.
+user must have access to the database, add users in mlab for DB administrators
+connect using the mlab drive in UFI. Pegar the db address to compass DB to set up the connection. 
+you can set up multiple projects to connect to the same DBs, this is useful for doing prototyping
+go to mongoose connect in project app.js, substitute it with the string from mlab, username and 
+password should go after the ://username:password@.........etc
+npm i -S dotenv
+what is this? file to save passwords importantes. save .env in the root dir. written in linux 
+.env
+DATABASE_URL=mongo sandbox url
+then in app.js require('dotenv)
+
+mongoose.connect(process.env.DATABASE_URL)
+
+deploy to heroku is okay with the .env
+not to git add .env to git ignore so that it's hidden
+always use cloud DBs so that you can upload them whenever you like
+
+upload
+git add -A (starting from this point, absolutely everything down folder)
+git commit -m ..."
+git remote -v to check that heroku is that, if not, go to heroku create to make sure its there and if not to add 
+the heroku repo in the terminal
+git push heroku master
+get heroku app address, paste it in the url path, then see it run!
+make sure the server host is updated to the new DB as well for FB and google in the URL authorized.
+it's fine to keep it local, but PRO to rock it on heroku
+
+checking issues
+heroku log
+heorku open
+troubleshoot as needed and be extra sure to change any DB routes within APIs or app methods for functionality
+
+
+
+
+
+
+
+
+
+
+*/

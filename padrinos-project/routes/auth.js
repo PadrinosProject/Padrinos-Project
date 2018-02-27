@@ -10,7 +10,7 @@ router.get('/login', ensureLoggedOut(), (req, res) => {
 });
 
 router.post("/login", ensureLoggedOut(), passport.authenticate("local-login", {
-    successRedirect: "/",
+    successRedirect: "/view-events",
     failureRedirect: "/login",
     failureFlash: true,
     passReqToCallback: true
@@ -21,7 +21,7 @@ router.get('/signup', ensureLoggedOut(), (req, res) => {
 });
 
 router.post('/signup', ensureLoggedOut(), passport.authenticate('local-signup', {
-    successRedirect: "/login",
+    successRedirect: "/view-events",
     failureRedirect: "/signup",
     failureFlash: true,
     passReqToCallback: true
@@ -30,7 +30,7 @@ router.post('/signup', ensureLoggedOut(), passport.authenticate('local-signup', 
 //Facebook Auth
 router.get("/auth/facebook", passport.authenticate("facebook"));
 router.get("/auth/facebook/callback", passport.authenticate("facebook", {
-successRedirect: "/", //CHECK THIS ROUTING
+successRedirect: "/view-events", //CHECK THIS ROUTING
 failureRedirect: "/"
 }));
 
@@ -42,7 +42,7 @@ router.get("/auth/google", passport.authenticate("google", {
   
 router.get("/auth/google/callback", passport.authenticate("google", {
     failureRedirect: "/", //CHECK THIS ROUTING
-    successRedirect: "/"
+    successRedirect: "/view-events"
   }));
 
 router.get('/logout', ensureLoggedIn('/login'), (req, res) => {

@@ -21,6 +21,7 @@ const index = require('./routes/index');
 const authController = require('./routes/auth');
 const viewEvent = require('./routes/events');
 const newEvent = require('./routes/events');
+const userController = require('./routes/user');
 
 //Session
 app.use(session({
@@ -56,6 +57,7 @@ app.use('/', index);
 app.use('/', authController);
 app.use ('/', viewEvent);
 app.use('/', newEvent);
+app.use('/', userController);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
