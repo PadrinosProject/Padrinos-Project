@@ -11,7 +11,7 @@ const multer       = require ('multer');
 const axios        = require ('axios');
 const session      = require ('express-session');
 const MongoStore   = require('connect-mongo')(session);
-
+const flash        = require("connect-flash");
 
 mongoose.connect('mongodb://localhost/padrinos-project');
 
@@ -22,8 +22,12 @@ const authController = require('./routes/auth');
 const viewEvent = require('./routes/events');
 const newEvent = require('./routes/events');
 
-
-
+//Session
+app.use(session({
+  secret: "our-passport-local-strategy-app",
+  resave: true,
+  saveUninitialized: true
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -52,19 +56,6 @@ app.use('/', index);
 app.use('/', authController);
 app.use ('/', viewEvent);
 app.use('/', newEvent);
-
-
-
-
-
-
-//Session
-app.use(session({
-  secret: "padrinosApp",
-  resave: true,
-  saveUninitialized: true
-}));
-
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

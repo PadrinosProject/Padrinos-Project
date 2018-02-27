@@ -9,7 +9,14 @@
   <label for="">Your Password</label>
   <br>
   <input placeholder="Your password" type="password" name="password">
+  <button class="btn-user-login">
+    Log In
+  </button>
 </form>
+</div>
+<% if (typeof message != "undefined") { %>
+  <div class="error-message"><%= message %></div>
+<% } %>
 
 <div class="entrar">
       
@@ -24,7 +31,7 @@
     Login with Google
   </button>
     <br>
-
+  </div>
   <span>New user?</span>
   <a href="/signup">Sign Up</a>
 </div>

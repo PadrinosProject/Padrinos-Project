@@ -2,8 +2,10 @@
 const LocalStrategy      = require('passport-local').Strategy;
 const User               = require('../models/User');
 const bcrypt             = require('bcrypt');
-const passport           = require ("passport");
-const passportSession    = require ("passport-session");
+const passport           = require("passport");
+const passportSession    = require("passport-session");
+const flash              = require("connect-flash");
+const app                = require("../app.js")
 
 module.exports = function (app) {
   // NEW
@@ -17,12 +19,17 @@ module.exports = function (app) {
       cb(null, user);
     });
   });
+
+  //Use Flash
+
+  app.use(flash());
   
   // Signing Up
   passport.use('local-signup', new LocalStrategy(
     { passReqToCallback: true },
     (req, username, password, next) => {
         console.log("entrando a local-signup");
+        console.log(req.body)
       // To avoid race conditions
       process.nextTick(() => {
           User.findOne({
@@ -34,7 +41,12 @@ module.exports = function (app) {
                   return next(null, false);
               } else {
                   // Destructure the body
-                  const { username, email, password } = req.body;
+                  if (req.body.password !== req.body.confirmPassword) {
+                    //missing error message "use Connect-Flash"
+                    console.log("error with password");
+                    return (next(err));
+                  }
+                  const { username, email, password, photo } = req.body;
                   const hashPass = bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
                   const newUser = new User({
                     username,
@@ -51,16 +63,21 @@ module.exports = function (app) {
       });
   }));
 
-  passport.use('local-login', new LocalStrategy((username, password, next) => {
+  passport.use('local-login', new LocalStrategy({
+    passReqToCallback: true
+  }, (req, username, password, next) => {
     User.findOne({ username }, (err, user) => {
       if (err) {
         return next(err);
+        console.log(err);
       }
       if (!user) {
         return next(null, false, { message: "Incorrect username" });
+        console.log(message);
       }
       if (!bcrypt.compareSync(password, user.password)) {
         return next(null, false, { message: "Incorrect password" });
+        console.log(message);
       }
       return next(null, user);
     });
@@ -69,5 +86,4 @@ module.exports = function (app) {
   // NEW
   app.use(passport.initialize());
   app.use(passport.session());
-
 }
