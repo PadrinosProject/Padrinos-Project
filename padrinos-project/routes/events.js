@@ -6,7 +6,7 @@ const { ensureLoggedIn }  = require('connect-ensure-login');
 //Multer for event image upload
 const multer  = require('multer');
 const upload = multer({ dest: './public/uploads/event-image' });
-const User = require ("../models/Event.js");
+const Event = require ("../models/Event.js");
 
 //Create Event
 

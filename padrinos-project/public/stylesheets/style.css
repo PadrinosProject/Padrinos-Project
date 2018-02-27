@@ -2,7 +2,8 @@ body {
   padding: 5em;
   color: white;
   font-size: 19px;  
-  background-color:	 #00b386;
+  background-color:	 #9f38a8;
+  
 }
 /* Form Login/Signup =============================================================================*/
 
@@ -130,6 +131,13 @@ a{
 
 .wel{
   font-size: 30px;
+}
+
+
+.home{
+  position: absolute;
+  top:250px;
+  right: 60px;
 }
 /* Shared ================================================================================================*/
 .loginBtn {
