@@ -1,6 +1,7 @@
 //From Andrei's Funding Example
 const LocalStrategy      = require('passport-local').Strategy;
 const FbStrategy         = require('passport-facebook').Strategy;
+const GoogleStrategy     = require("passport-google-oauth").OAuth2Strategy;
 const User               = require('../models/User');
 const bcrypt             = require('bcrypt');
 const passport           = require("passport");
@@ -100,6 +101,33 @@ module.exports = function (app) {
   
       const newUser = new User({
         facebookID: profile.id
+      });
+  
+      newUser.save((err) => {
+        if (err) {
+          return done(err);
+        }
+        done(null, newUser);
+      });
+    });
+  
+  }));
+  //Sign in with Google
+  passport.use(new GoogleStrategy({
+    clientID: "536900773588-hsa9g3qsg18p5ri2hg4u77gvivl2t2a5.apps.googleusercontent.com",
+    clientSecret: "WRtMDGw4z-wInK1bpwEtUVww",
+    callbackURL: "/auth/google/callback"
+  }, (accessToken, refreshToken, profile, done) => {
+    User.findOne({ googleID: profile.id }, (err, user) => {
+      if (err) {
+        return done(err);
+      }
+      if (user) {
+        return done(null, user);
+      }
+  
+      const newUser = new User({
+        googleID: profile.id
       });
   
       newUser.save((err) => {

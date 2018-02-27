@@ -27,20 +27,27 @@ router.post('/signup', ensureLoggedOut(), passport.authenticate('local-signup', 
     passReqToCallback: true
   }));
 
+//Facebook Auth
 router.get("/auth/facebook", passport.authenticate("facebook"));
 router.get("/auth/facebook/callback", passport.authenticate("facebook", {
 successRedirect: "/", //CHECK THIS ROUTING
 failureRedirect: "/"
 }));
 
+//Google Auth
+router.get("/auth/google", passport.authenticate("google", {
+    scope: ["https://www.googleapis.com/auth/plus.login",
+            "https://www.googleapis.com/auth/plus.profile.emails.read"]
+  }));
+  
+router.get("/auth/google/callback", passport.authenticate("google", {
+    failureRedirect: "/", //CHECK THIS ROUTING
+    successRedirect: "/"
+  }));
+
 router.get('/logout', ensureLoggedIn('/login'), (req, res) => {
     req.logout();
     res.redirect('/');
 });
-/*
-authRoutes.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
-    res.render("private", { user: req.user });
-  });
-*/
 
 module.exports = router;
