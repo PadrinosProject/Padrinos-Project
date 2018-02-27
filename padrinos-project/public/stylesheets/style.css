@@ -3,13 +3,17 @@ body {
   color: white;
   font-size: 19px;  
   background-color:	 #9f38a8;
+
   
+}
+
+.form-control{
+  width: 50%; 
 }
 /* Form Login/Signup =============================================================================*/
 
 h1{
   font-size: 70px;
-  
 
 }
 
@@ -18,10 +22,14 @@ h2{
   color:black;
   font-size: 80px;
   padding-block-start: 20px;
-  padding-top: 50px;
+  padding-top: 20px;
   line-height: 1.2;
 
+}
 
+.createh2{
+  padding-left: 250px;
+  padding-top: 20px;
 }
 
 .sub1{
@@ -65,7 +73,7 @@ a:link{
 
 input[type=text], [type=password] {
   width: 50%;
-  padding: 12px 20px;
+  padding: 5px 5px;
   margin: 8px 0;
   box-sizing: border-box;
   border: 3px solid #ccc;
@@ -136,9 +144,18 @@ a{
 
 .home{
   position: absolute;
-  top:250px;
+  top:220px;
   right: 60px;
 }
+
+/* Form Create Event========================================================================== */
+
+.form3{
+  position: relative;
+  left: 300px;
+}
+
+
 /* Shared ================================================================================================*/
 .loginBtn {
   box-sizing: border-box;

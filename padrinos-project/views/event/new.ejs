@@ -1,56 +1,63 @@
-<h2>Create your Event</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+      #map {
+       height: 350px;
+       width: 50%;
+      }
+   </style>
+ </head>
+ <body>
 
+ <h2 class="createh2">Create your Event</h2>
 
-<div class="create-event">
-<form class="new-event" action="">
- 
-  
-
-    <div class="form-row">
-        <div class="col-md-6 mb-3">
-          <label for="validationTooltip03">City</label>
-          <input type="text" class="form-control" id="validationTooltip03" placeholder="City" required>
-          <div class="invalid-tooltip">
-            Please provide a valid city.
-          </div>
-
-          <select class="custom-select">
-              <option selected>Open this select menu</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
-
-        </div>
-        <div class="col-md-3 mb-3">
-          <label for="validationTooltip04">State</label>
-          <input type="text" class="form-control" id="validationTooltip04" placeholder="State" required>
-          <div class="invalid-tooltip">
-            Please provide a valid state.
-          </div>
-        </div>
-        <div class="col-md-3 mb-3">
-          <label for="validationTooltip05">Zip</label>
-          <input type="text" class="form-control" id="validationTooltip05" placeholder="Zip" required>
-          <div class="invalid-tooltip">
-            Please provide a valid zip.
-          </div>
-        </div>
-      </div>
-      <button class="btn btn-primary" type="submit">Submit form</button>
-
-
-
-
-  <div class="custom-file">
-      <input type="file" class="custom-file-input" id="customFile">
-      <label class="custom-file-label" for="customFile">Choose file</label>
+ <form class="form3" action="">
+   <label for="">Event Title</label>
+   <br>
+    <input type="text">
+     <div class="form-group">
+      <label for="exampleFormControlSelect1">Event type</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>Birthday Party</option>
+        <option>BBQ</option>
+        <option>XV años</option>
+        <option>Celebration Party</option>
+        <option>Surprise Party</option>
+      </select>
     </div>
+   <label for="">Enter Event Location</label> 
+   <br>
+   <input  id="search" type="text" placeholder="put your adress">
+   <div id="map"></div>
+   <div id="locationField">
+   <br>
+   <label for="">Event Photo </label>
+   <br>
+  <input type="file">
+  <br>
+  <div class="form-group">
+      <label for="exampleFormControlTextarea1">Enter a brief description of your event</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+  </form>
 
 
 
+           
+    <!-- API -->
+    <script
+    async
+    defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYJX1F4hEQMcbWEAn_AH_giXPvSUMqSIw&libraries=places">
+  </script>
+    <script type="text/javascript" src="javascripts/app.js"></script>    
+    </form>
+    </div>  <!--  -->
+  </body>
+</html>
 
-
-
-</form>
-</div>  <!--  -->
