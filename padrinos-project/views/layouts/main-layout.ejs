@@ -7,6 +7,42 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
   </head>
 <!-- nav bar -->
+<% if(typeof user !== "undefined"){ %>
+  
+
+
+<!-- nav bar when loged in -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="http://localhost:3000/">
+
+
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="http://localhost:3000/view-profile">My Profile<span class="sr-only">(current)</span></a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="#">Help</a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost:3000/new">Create Event</a>
+      </li>
+    </ul>
+    <span class="navbar-text">
+  
+<button type="button" class="btn btn-dark"><a  class="bb" href="http://localhost:3000/">Log out</a></button>
+
+    </span>
+  </div>
+</nav>
+
+  <% } else{ %>
+
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="http://localhost:3000/">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,9 +68,12 @@
       </span>
     </div>
   </nav>
-<!-- nav bar -->
+
+<%}%>
 
   <body>
     <%- body %>
+
+   
   </body>
 </html>

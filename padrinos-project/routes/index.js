@@ -7,7 +7,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-  res.render ('index');
+  res.render ('index', {user:req.user});
 });
 
 

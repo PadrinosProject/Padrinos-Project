@@ -150,6 +150,11 @@ input[type=password]:focus {
   right: 60px;
 }
 
+
+.card-text, .card-title{
+  color: black;
+}
+
 /* Form Create Event========================================================================== */
 
 .form3{

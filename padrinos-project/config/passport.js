@@ -96,6 +96,7 @@ module.exports = function (app) {
         return done(err);
       }
       if (user) {
+        //app.locals.user = user;
         return done(null, user);
       }
   
@@ -107,6 +108,7 @@ module.exports = function (app) {
         if (err) {
           return done(err);
         }
+        //app.locals.user = newUser;
         done(null, newUser);
       });
     });

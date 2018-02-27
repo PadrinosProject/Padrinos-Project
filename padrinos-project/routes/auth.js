@@ -4,8 +4,10 @@ const passport = require ("passport");
 const LocalStrategy = require('passport-local').Strategy;
 const flash = require("connect-flash");
 const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
+const app = require("../app.js");
 
 router.get('/login', ensureLoggedOut(), (req, res) => {
+    //if(!req.isAuthenticated()) res.redirect()
     res.render('authentication/login', {message: req.flash("error")});
 });
 
@@ -45,8 +47,9 @@ router.get("/auth/google/callback", passport.authenticate("google", {
     successRedirect: "/view-events"
   }));
 
-router.get('/logout', ensureLoggedIn('/login'), (req, res) => {
+router.get('/logout', (req, res) => {
     req.logout();
+    //delete app.locals.user;
     res.redirect('/');
 });
 
