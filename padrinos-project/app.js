@@ -1,4 +1,4 @@
-//const config       = require ("./config")
+// const config       = require ("./config")
 const express      = require('express');
 const path         = require('path');
 const favicon      = require('serve-favicon');
@@ -57,6 +57,18 @@ app.use('/', authController);
 app.use ('/', viewEvent);
 app.use('/', newEvent);
 
+<<<<<<< HEAD
+=======
+
+//Session
+app.use(session({
+  secret: "padrinosApp",
+  resave: true,
+  saveUninitialized: true
+}));
+
+
+>>>>>>> 8e2c24916a3a010b0059df0bb9b9a890acfb096c
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   const err = new Error('Not Found');

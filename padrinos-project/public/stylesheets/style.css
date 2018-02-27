@@ -2,21 +2,24 @@ body {
   padding: 5em;
   color: white;
   font-size: 19px;  
-  background-color:	 #00b386;
+  background-color:	 #9f38a8;
+  
 }
 /* Form Login/Signup =============================================================================*/
 
 h1{
-  font-family: "Roboto", Roboto, arial, sans-serif;
-  font-size: 60px;
+  font-size: 70px;
+  
 
 }
 
 h2{
   font-family: "Roboto", Roboto, arial, sans-serif;
-  color:white;
-  font-size: 40px;
-  display: flex;
+  color:black;
+  font-size: 80px;
+  padding-block-start: 20px;
+  padding-top: 50px;
+  line-height: 1.2;
 
 
 }
@@ -97,27 +100,45 @@ input[type=password]:focus {
 }
 
 
-.btn-1 , .btn-2{
+.btn{
   position: absolute;
   top:30px;
   right: 200px;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+  margin-top:80px;
+
 }
-.btn-2{
+.btn2{
   position: absolute;
   top:30px;
   right: 30px;
+  border-radius:.25rem;
+  padding: .250rem .75rem;
+  margin-right: 60px;
+  margin-top:80px;
 
 }
 
+a{
+  color:white;
+}
+
+
+.lorem{
+  font-family: "Helvetica Neue","Segoe UI","Oxygen","Ubuntu","Cantarell","Open Sans",sans-serif;
+  font-size: 18px;
+  color: white;
+}
+
+.wel{
+  font-size: 30px;
+}
+
+
+.home{
+  position: absolute;
+  top:250px;
+  right: 60px;
+}
 /* Shared ================================================================================================*/
 .loginBtn {
   box-sizing: border-box;
