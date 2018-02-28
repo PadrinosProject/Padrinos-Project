@@ -24,12 +24,13 @@ h1{
 }
 
 h2{
-  font-family: "Roboto", Roboto, arial, sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;  
   color:black;
   font-size: 80px;
   padding-block-start: 20px;
   padding-top: 20px;
   line-height: 1.2;
+  margin-left: 80px;
 
 }
 
@@ -182,6 +183,13 @@ input[type=password]:focus {
   margin-top: 100px;
   margin-right: 40px;
  
+}
+
+.find{
+  font-size: 40px;
+  font-weight: lighter;
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin-left: 100px;
 }
 /* Form Create Event========================================================================== */
 
