@@ -22,6 +22,8 @@ const authController = require('./routes/auth');
 const viewEvent = require('./routes/events');
 const newEvent = require('./routes/events');
 const userController = require('./routes/user');
+const eventDetils = require('./routes/events')
+const makeList = require('./routes/events')
 
 //Session
 app.use(session({
@@ -63,6 +65,7 @@ app.use('/', authController);
 app.use ('/', viewEvent);
 app.use('/', newEvent);
 app.use('/', userController);
+app.use('/', eventDetils);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
