@@ -18,6 +18,8 @@ router.post('/new', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
   res.render('./event/new');
 });
 
+//https://graph.facebook.com/user_id/picture?type=square
+
 //View Event
 
 router.get('/view-events', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
