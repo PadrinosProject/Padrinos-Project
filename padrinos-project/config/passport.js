@@ -30,8 +30,6 @@ module.exports = function (app) {
   passport.use('local-signup', new LocalStrategy(
     { passReqToCallback: true },
     (req, username, password, next) => {
-        console.log("entrando a local-signup");
-        console.log(req.body)
       // To avoid race conditions
       process.nextTick(() => {
           User.findOne({
@@ -54,7 +52,7 @@ module.exports = function (app) {
                     username,
                     email,
                     password: hashPass,
-                    photo,
+                    picPath: `/uploads/${req.file.filename}`
                   });
                   newUser.save((err) => {
                       if (err){ next(err); }

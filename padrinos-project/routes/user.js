@@ -4,8 +4,9 @@ const router  = express.Router();
 const ensureLoggedIn = require('connect-ensure-login');
 //Multer for user/event image upload
 const multer  = require('multer');
-const upload  = multer({ dest: './public/uploads/user-image' });
+const upload  = multer({ dest: './public/uploads' });
 const User    = require("../models/User");
+
 
 router.get('/view-profile/', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
   res.render('user/profile', {user: req.user});
@@ -16,6 +17,7 @@ router.get('/view-profile/', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => 
 router.get('/view-guest', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
   res.render('user/guestProfile');
 });
+
 
 
 module.exports = router;
