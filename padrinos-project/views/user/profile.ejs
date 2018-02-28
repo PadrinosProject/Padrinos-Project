@@ -1,8 +1,9 @@
+<h1><%= user%></h1>
 <%if (user.picPath) {%>
   <!-- <img class="profile-photo" src=<%= user.photo%> alt=""> -->
-  <img class="dePerfil" src="<%= user.picPath %>"/>
+  <img class="dePerfil" src=<%= user.picPath %>/>
 <%} else {%>
-  <img class="dePerfil" src="<%= user.picPath %>"/>
+  <img class="dePerfil" src=<%= user.picPath %>/>
   <%}%>
 
 <div class="about-me">
