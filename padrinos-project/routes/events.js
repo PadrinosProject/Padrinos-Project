@@ -62,6 +62,7 @@ router.get('/view-events/:id', ensureLoggedIn.ensureLoggedIn(), (req, res, next)
   Event.findById(req.params.id, (err, event) => {
     if (err)       { return next(err) }
     if (!event) { return next(new Error("404")) }
+    console.log(event)
     return res.render('event/event-details', { event: event })
   });
 });
