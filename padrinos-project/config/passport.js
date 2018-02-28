@@ -1,4 +1,3 @@
-//From Andrei's Funding Example
 const LocalStrategy      = require('passport-local').Strategy;
 const FbStrategy         = require('passport-facebook').Strategy;
 const GoogleStrategy     = require("passport-google-oauth").OAuth2Strategy;
@@ -101,7 +100,7 @@ module.exports = function (app) {
         username: profile.displayName,
         facebookID: profile.id,
         email: profile.email,
-        photo: `https://graph.facebook.com/${profile.id}/picture?picture?type=large&width=720&height=720`
+        picPath: `https://graph.facebook.com/${profile.id}/picture?picture?type=large&width=720&height=720`
       });
   
       newUser.save((err) => {
@@ -132,7 +131,7 @@ module.exports = function (app) {
         username: profile.displayName,
         googleID: profile.id,
         email:    profile.emails[0].value,
-        photo:    profile.photos[0].value
+        picPath:    profile.photos[0].value
       });
   
       newUser.save((err) => {

@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const EventSchema = Schema({
-  owner:    Schema.Types.ObjectId,
+  owner: Schema.Types.ObjectId,
   name: String,
   category: String,
   date:     {
