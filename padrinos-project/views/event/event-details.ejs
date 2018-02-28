@@ -1,14 +1,14 @@
-<h1>View and Edit Event Details</h1>
+<h1 class="ev-det">View and Edit Event Details</h1>
 
 
-<h2>Name: <%=event.name%></h2><button>Edit</button>
-<h2>Type:  <%=event.category%></h2><button>Edit</button>
-<h2>Date:  <%=event.date%></h2><button>Edit</button>
-<h2>Location:  <%=event.location%></h2><button>Edit</button>
-<h2>Image:  <img src=<%=event.photo%> width="200px" height="200px"></h2><button>Edit</button>
-<h2>Description:  <%=event.description%></h2><button>Edit</button>
+<h4 class="list1">Name: <%=event.name%></h2>
+<h4 class="list1">Type:  <%=event.category%>
+<h4 class="list1">Date:  <%=event.date%></h2>
+<h4 class="list1">Location:  <%=event.location%></h2>
+<h4 class="list1">Image:  <img src=<%=event.photo%> width="200px" height="200px">
+<h4 class="list1">Description:  <%=event.description%></h4>
 
-<h1>Add/Edit Padrinos</h1>
+<button>Edit</button>
 <button>Add New</button>
 <button>Remove</button>
 
@@ -20,3 +20,19 @@
     </div>
     <input type="text" class="form-control" aria-label="Text input with checkbox">
   </div>
+<!-- Share buttons for Facebook and Google -->
+
+  <div class="fb-share-button" data-href="http://localhost:3000/new" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A3000%2Fnew&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+  <div class="g-plus" data-action="share">Share</div>
+
+
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=343564306134625&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>

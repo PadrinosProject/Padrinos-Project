@@ -210,6 +210,17 @@ input[type=password]:focus {
   width: 100px;
   border-radius: 50%
 }
+
+.ev-det{
+  color: black;
+  top: 30px;
+
+}
+.list1{
+  margin-left: 350px;
+  margin-top: 150px;
+
+}
 /* Form Create Event========================================================================== */
 
 .form3{
