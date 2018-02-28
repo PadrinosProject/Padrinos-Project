@@ -125,7 +125,6 @@ module.exports = function (app) {
         return done(err);
       }
       if (user) {
-        console.log(profile);
         return done(null, user);
       }
   
