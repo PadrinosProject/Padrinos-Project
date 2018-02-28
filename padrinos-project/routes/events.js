@@ -24,7 +24,7 @@ router.post('/new', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
     photo: req.body.photo,
   });
   newEvent.save()
-  .then(createdEvent => res.send(`Successfuly saved`))
+  .then(createdEvent => res.send(`Successfuly saved`)) // quitar lo que puso bliss
   .catch(err => res.render("error", {message:err}));
 });
 

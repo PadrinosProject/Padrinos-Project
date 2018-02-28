@@ -19,17 +19,18 @@ body {
 
 h1{
   font-size: 70px;
-  margin-left:100px;
+  margin-left:80px;
 
 }
 
 h2{
-  font-family: "Roboto", Roboto, arial, sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;  
   color:black;
   font-size: 80px;
   padding-block-start: 20px;
-  padding-top: 20px;
+  padding-top: 50px;
   line-height: 1.2;
+  margin-left: 80px;
 
 }
 
@@ -144,6 +145,7 @@ input[type=password]:focus {
   font-family: "Helvetica Neue","Segoe UI","Oxygen","Ubuntu","Cantarell","Open Sans",sans-serif;
   font-size: 18px;
   color: white;
+  margin-left:80px;
 }
 
 .wel{
@@ -171,7 +173,7 @@ input[type=password]:focus {
 }
 
 .upcoming{
-  margin-left: 90px;
+  margin-left: 500px;
 }
 
 .col-sm-3{
@@ -182,6 +184,13 @@ input[type=password]:focus {
   margin-top: 100px;
   margin-right: 40px;
  
+}
+
+.find{
+  font-size: 40px;
+  font-weight: lighter;
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin-left: 400px;
 }
 /* Form Create Event========================================================================== */
 
