@@ -7,7 +7,7 @@ const {ensureLoggedIn, ensureLoggedOut} = require('connect-ensure-login');
 const app = require("../app.js");
 
 router.get('/login', ensureLoggedOut(), (req, res) => {
-    // if(!req.isAuthenticated()) res.redirect()
+    //if(!req.isAuthenticated()){res.redirect('/')};
     res.render('authentication/login', {message: req.flash("error")});
 });
 
@@ -32,7 +32,7 @@ router.post('/signup', ensureLoggedOut(), passport.authenticate('local-signup', 
 //Facebook Auth
 router.get("/auth/facebook", passport.authenticate("facebook"));
 router.get("/auth/facebook/callback", passport.authenticate("facebook", {
-successRedirect: "/view-events", //CHECK THIS ROUTING
+successRedirect: "/view-events",
 failureRedirect: "/"
 }));
 
@@ -43,7 +43,7 @@ router.get("/auth/google", passport.authenticate("google", {
   }));
   
 router.get("/auth/google/callback", passport.authenticate("google", {
-    failureRedirect: "/", //CHECK THIS ROUTING
+    failureRedirect: "/",
     successRedirect: "/view-events"
   }));
 

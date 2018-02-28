@@ -1,16 +1,19 @@
-<img class="profile-photo" src="https://www.rodentia.es/blog/wp-content/uploads/2016/12/donde-vive-el-oso-pardo.jpg" alt="">
+<%if (user.photo) {%>
+  <img class="profile-photo" src=<%= user.photo%> alt="">
+<%} else {%>
+  <img class="profile-photo" src="https://www.rodentia.es/blog/wp-content/uploads/2016/12/donde-vive-el-oso-pardo.jpg" alt="">
+  <%}%>
 
 <div class="about-me">
   <ul class="snd">
-<li><%%>username</li>
-<li>lives in <%%> MEXICO CITY</li>
-<li><%%>status</li>
-<li>padrino since <%%> 2016</li>
+<li>Your Name: <%= user.username %> </li>
+<li>Your Town: MEXICO CITY</li>
+<li>Current Status: </li>
+<li>Padrino Since 2016</li>
   </ul>
 </div>
 
 <div>
-
   <p class="upcoming">Upcomming Events </p>
 
 
