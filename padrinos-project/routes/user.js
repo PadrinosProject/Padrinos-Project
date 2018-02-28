@@ -7,8 +7,8 @@ const multer  = require('multer');
 const upload = multer({ dest: './public/uploads/user-image' });
 const User = require ("../models/User.js");
 
-router.get('/view-profile', (req,res,next) => {
-  res.render('user/profile');
+router.get('/view-profile/:id', (req,res,next) => {
+  res.render('user/profile', {user: req.user});
 });
 
 //View Guest Profile
