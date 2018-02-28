@@ -14,13 +14,13 @@ router.get('/new', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
   res.render('./event/new', {user: req.user});
 });
 
-router.post('/new', (req,res,next) => {
+router.post('/new', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
   res.render('./event/new');
 });
 
 //View Event
 
-router.get('/view-events', (req,res,next) => {
+router.get('/view-events', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
   res.render('event/view-events', {user: req.user});
 });
 
