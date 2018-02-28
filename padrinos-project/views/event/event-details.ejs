@@ -1,30 +1,30 @@
 <h1 class="ev-det">View and Edit Event Details</h1>
 
 
-<h4 class="list1">Name: <%=event.name%></h2>
-<h4 class="list1">Type:  <%=event.category%>
-<h4 class="list1">Date:  <%=event.date%></h2>
-<h4 class="list1">Location:  <%=event.location%></h2>
-<h4 class="list1">Image:  <img src=<%=event.photo%> width="200px" height="200px">
-<h4 class="list1">Description:  <%=event.description%></h4>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src=<%=event.photo%> alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><%=event.name%></h5>
+    <p class="card-text"><%=event.description%></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Date:  <%=event.date%></li>
+    <li class="list-group-item">Type:  <%=event.category%></li>
+    <li class="list-group-item">Location:  <%=event.location%></li>
+  </ul>
+  <div class="card-body">
+    <div class="fb-share-button" data-href="http://localhost:3000/new" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A3000%2Fnew&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+    <div class="g-plus" data-action="share">Share</div>
+
+  </div>
+</div>
+
+<p class="ha">Request to Padrino</p>
 
 <button>Edit</button>
 <button>Add New</button>
 <button>Remove</button>
-
-<div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <div class="input-group-text">
-        <input type="checkbox" aria-label="Checkbox for following text input">
-      </div>
-    </div>
-    <input type="text" class="form-control" aria-label="Text input with checkbox">
-  </div>
 <!-- Share buttons for Facebook and Google -->
-
-  <div class="fb-share-button" data-href="http://localhost:3000/new" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A3000%2Fnew&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
-  <div class="g-plus" data-action="share">Share</div>
-
 
   <div id="fb-root"></div>
 <script>(function(d, s, id) {

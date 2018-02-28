@@ -176,6 +176,10 @@ input[type=password]:focus {
   color: black;
 }
 
+
+.card{
+  margin: 100px 20px;
+}
 .profile-photo{
   border-radius: 50%;
   height: 100px;
@@ -219,7 +223,31 @@ input[type=password]:focus {
 .list1{
   margin-left: 350px;
   margin-top: 150px;
+  
+}
 
+.myparty{
+  list-style-type: none;
+  margin-top:150px;
+  
+}
+
+.myparty > li{
+  /* margin-top:20px;
+  margin-left: 350px; */
+}
+
+.b-g{
+  height: 200px;
+  width: 200px;
+  position: relative;
+  left: 220px;
+  bottom: 150px;
+
+}
+
+.list-group-flush .list-group-item{
+  color: black;
 }
 /* Form Create Event========================================================================== */
 
