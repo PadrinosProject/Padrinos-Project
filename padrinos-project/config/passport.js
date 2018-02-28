@@ -103,7 +103,7 @@ module.exports = function (app) {
         username: profile.displayName,
         facebookID: profile.id,
         email: profile.email,
-        photo: profile.photo
+        photo: `https://graph.facebook.com/${profile.id}/picture?picture?type=large&width=720&height=720`
       });
   
       newUser.save((err) => {

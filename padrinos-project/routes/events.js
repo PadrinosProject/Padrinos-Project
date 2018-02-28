@@ -15,11 +15,19 @@ router.get('/new', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
 });
 
 router.post('/new', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
-  res.render('./event/new');
+  res.render('./event/view-events');
+  const newEvent = new Event({
+    name: req.body.eventTitle,
+    owner: user._id,
+    category: req.body.eventCategory,
+    date: req.body.usr_time,
+    photo: req.body.photo,
+  });
+  newEvent.save((err) => {
+      if (err){ next(err); }
+      return next(null, newEvent);
+  });
 });
-
-//https://graph.facebook.com/user_id/picture?type=square
-
 //View Event
 
 router.get('/view-events', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {

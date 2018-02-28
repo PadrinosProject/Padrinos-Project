@@ -17,10 +17,10 @@
  <form class="form3" action="">
    <label for="">Event Title</label>
    <br>
-    <input type="text">
+    <input type="text" name="eventTitle">
      <div class="form-group">
       <label for="exampleFormControlSelect1">Event type</label>
-      <select class="form-control" id="exampleFormControlSelect1">
+      <select class="form-control" id="exampleFormControlSelect1" name="eventCategory">
         <option>Birthday Party</option>
         <option>BBQ</option>
         <option>XV años</option>
@@ -30,7 +30,7 @@
     </div>
    <label for="">Enter Event Location</label> 
    <br>
-   <input  id="search" type="text" placeholder="put your adress">
+   <input id="search" type="text" placeholder="put your adress" name="location">
    <div id="map"></div>
    <div id="locationField">
      <br>
@@ -50,7 +50,7 @@
    <br>
    <label for="">Event Photo </label>
    <br>
-    <input type="file">
+    <input type="file" name="photo"> <!--START HERE TOMORROW LANCE  -->
       <br>
        <div class="form-group">
       <label for="exampleFormControlTextarea1">Enter a brief description of your event</label>
