@@ -7,7 +7,7 @@ const {ensureLoggedIn, ensureLoggedOut} = require('connect-ensure-login');
 const app = require("../app.js");
 
 router.get('/login', ensureLoggedOut(), (req, res) => {
-    if(!req.isAuthenticated()) res.redirect()
+    // if(!req.isAuthenticated()) res.redirect()
     res.render('authentication/login', {message: req.flash("error")});
 });
 
