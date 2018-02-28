@@ -14,7 +14,7 @@
  </head>
  <body>
  <h2 class="createh2">Create your Event</h2>
- <form class="form3" action="/new" method="POST">
+ <form class="form3" action="/new" method="POST" enctype="multipart/form-data">
    <label for="">Event Title</label>
    <br>
     <input type="text" name="eventTitle">
@@ -40,12 +40,12 @@
       </div>
    <br>
    <label for="">Starts</label>
-   <input id="date" type="date" name="date">
-   <input type="time" name="usr_time">
+   <input class="date" type="date" name="startDate">
+   <input type="time" name="startTime">
    <br>
    <label for="">Ends</label>
    <input type="time" name="endDate">
-   <input id="date" type="date">
+   <input class="date" type="endTime">
    <button type="submit">Set</button>
    <br>
    <label for="">Event Photo </label>
@@ -54,9 +54,9 @@
       <br>
        <div class="form-group">
       <label for="exampleFormControlTextarea1">Enter a brief description of your event</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="eventDescription"></textarea>
     </div>
-    <input type="submit">
+    <input type="submit" value="Create Event">
   </form>
 
 

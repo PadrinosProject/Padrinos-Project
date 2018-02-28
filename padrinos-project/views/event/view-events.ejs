@@ -5,16 +5,33 @@
 <!-- <a href="/logout">Logout</a>
 <a href="/view-profile">View Profile</a>
 <a href="/new">Create Event</a> -->
-
 <div class="container">
 <div class="row">
+
+  <% if (event) {%>
+    <h1>Here are your events:</h1>
+    <% event.forEach((party) => {%>
+      <div class="col-sm-3">  
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src=<%=party.photo%> alt="Party Image">
+            <div class="card-body">
+                <h5 class="card-title"><%=party.category%></h5>
+                <p class="card-text"><%=party.date%></p>
+              <a href=<%=`/list-event/${party._id}`%> class="btn btn-primary">View Event</a>
+            </div> 
+          </div>
+      </div>
+    <% }) %>
+  <% } %>
+
+
 
 <div class="col-sm-3">  
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="https://www.andrologyaustralia.org/wp-content/uploads/three-men-bbq-470x313.jpg" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">BBQ</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">tle and make up the bulk of the card's content.</p>
     <a href="#" class="btn btn-primary">View Event</a>
   </div>
   </div> 

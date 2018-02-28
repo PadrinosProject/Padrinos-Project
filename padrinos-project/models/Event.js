@@ -4,15 +4,19 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const EventSchema = Schema({
-  owner:    Schema.Types.ObjectId, //idUser
+  owner:    Schema.Types.ObjectId,
+  name: String,
   category: String,
   date:     {
     type:Date,
     default: new Date()
-  }
-  // guests:  [idUsers],
-  // administradores:[idUsers],
-  // location: [latitude, longitude]
+  },
+  //location: [latitude, longitude],
+  photo: String,
+  description: String,
+  guests: []
+}, {
+  timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });
 
 const Event = mongoose.model('Event', EventSchema);
