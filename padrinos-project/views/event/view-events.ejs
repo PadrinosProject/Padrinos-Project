@@ -1,4 +1,6 @@
-<h1>Welcome <% %></h1>
+<% if (user) {%>
+<h1>Welcome <%= user.username%></h1>
+<% } %>
 <h2>aqui!!!!!</h2>
 <a href="/logout">Logout</a>
 <a href="/view-profile">View Profile</a>

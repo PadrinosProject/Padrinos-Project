@@ -89,7 +89,7 @@ module.exports = function (app) {
   passport.use(new FbStrategy({
     clientID: "343564306134625",
     clientSecret: "2657327f68385ea4aaf530245bf34624",
-    callbackURL: "/auth/facebook/callback"//UPDATE THIS?
+    callbackURL: "/auth/facebook/callback"
   }, (accessToken, refreshToken, profile, done) => {
     User.findOne({ facebookID: profile.id }, (err, user) => {
       if (err) {
@@ -99,9 +99,11 @@ module.exports = function (app) {
         //app.locals.user = user;
         return done(null, user);
       }
-  
       const newUser = new User({
-        facebookID: profile.id
+        username: profile.displayName,
+        facebookID: profile.id,
+        email: profile.email,
+        photo: profile.photo
       });
   
       newUser.save((err) => {
@@ -125,11 +127,15 @@ module.exports = function (app) {
         return done(err);
       }
       if (user) {
+        console.log(profile);
         return done(null, user);
       }
   
       const newUser = new User({
-        googleID: profile.id
+        username: profile.displayName,
+        googleID: profile.id,
+        email:    profile.emails[0].value,
+        photo:    profile.photos[0].value
       });
   
       newUser.save((err) => {
