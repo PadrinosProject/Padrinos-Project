@@ -2,7 +2,7 @@
 
 <h2>Sign Up</h2>
 <p>Create an Account</p>
-<form action="/signup" method="post">
+<form action="/signup" method="post" enctype="multipart/form-data">
   <label for="">User Name</label>
   <br>
   <input placeholder="Pick a username" type="text" name="username">
@@ -19,6 +19,11 @@
   <br>
   <input placeholder="Confirm password" type="password" name="confirmPassword">
   <br>
+<!--  -->
+
+      <input type="file" name="myPhoto">
+  
+<!--  -->
   <button class="btn-create-account">
     Create My Account
   </button>

@@ -192,6 +192,12 @@ input[type=password]:focus {
   font-family: 'Open Sans Condensed', sans-serif;
   margin-left: 400px;
 }
+
+.dePerfil{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%
+}
 /* Form Create Event========================================================================== */
 
 .form3{
