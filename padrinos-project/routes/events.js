@@ -42,5 +42,15 @@ router.get('/view-events', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
  ;
 });
 
+//view event details
+router.get('/event-details',(req, res) =>{
+res.render('event/event-details');
+});
+
+//second step - create list
+
+router.get('/make-list', (req, res)=>{
+res.render('event/make-list')
+});
 
 module.exports = router;
