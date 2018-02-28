@@ -1,13 +1,17 @@
-<h2>Event Details ID</h2>
+<h1>View and Edit Event Details</h1>
 
 
-<ul>
-  <li>When</li>
-  <li>Starts</li>
-  <li>Ends</li>
-</ul>
+<h2>Name: <%=event.name%></h2><button>Edit</button>
+<h2>Type:  <%=event.category%></h2><button>Edit</button>
+<h2>Date:  <%=event.date%></h2><button>Edit</button>
+<h2>Location:  <%=event.location%></h2><button>Edit</button>
+<h2>Image:  <img src=<%=event.photo%> width="200px" height="200px"></h2><button>Edit</button>
+<h2>Description:  <%=event.description%></h2><button>Edit</button>
 
-Event List
+<h1>Add/Edit Padrinos</h1>
+<button>Add New</button>
+<button>Remove</button>
+
 <div class="input-group mb-3">
     <div class="input-group-prepend">
       <div class="input-group-text">
