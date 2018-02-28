@@ -13,6 +13,7 @@ body {
 
 h1{
   font-size: 70px;
+  margin-left:100px;
 
 }
 
@@ -27,7 +28,7 @@ h2{
 }
 
 .createh2{
-  padding-left: 250px;
+  padding-left: 295px;
   padding-top: 20px;
 }
 
@@ -155,6 +156,27 @@ input[type=password]:focus {
   color: black;
 }
 
+.profile-photo{
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  margin: 100px;
+  
+}
+
+.upcoming{
+  margin-left: 90px;
+}
+
+.col-sm-3{
+/* margin: 24px;  */
+}
+
+.row{
+  margin-top: 100px;
+  margin-right: 40px;
+ 
+}
 /* Form Create Event========================================================================== */
 
 .form3{
@@ -162,6 +184,17 @@ input[type=password]:focus {
   left: 300px;
 }
 
+.snd{
+    position: relative;
+    bottom: 190px;  
+    left: 200px;
+}
+
+li{
+  font-family: "Helvetica Neue","Segoe UI","Oxygen","Ubuntu","Cantarell","Open Sans",sans-serif;
+  font-size: 15px;
+
+}
 
 /* Shared ================================================================================================*/
 .loginBtn {
