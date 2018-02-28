@@ -26,14 +26,28 @@ router.post('/new', ensureLoggedIn.ensureLoggedIn(), upload.single('photo'), (re
     description: req.body.eventDescription
   });
   newEvent.save()
-  .then(createdEvent => res.redirect(`/view-events`))
-  .catch(err => res.render("error", {message:err}));
+  .then(createdEvent => res.redirect(`/make-list`))
+  .catch(err => res.render('/new', {message:err}));
 });
+
+//Create List
+
+router.get('/make-list', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
+
+  res.render('./event/make-list', {user: req.user, event: req.event});
+});
+
+
+//Invite Guests
+
+router.get('/new', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
+  res.render('./event/new', {user: req.user});
+});
+
 
 //View Event
 
 router.get('/view-events', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
-  console.log(req.user)
     Event.find({owner: req.user._id})
       .then(result => {
         console.log(result)

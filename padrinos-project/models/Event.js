@@ -14,7 +14,8 @@ const EventSchema = Schema({
   //location: [latitude, longitude],
   photo: String,
   description: String,
-  guests: []
+  guests: [],
+  items: Schema.Types.ObjectId
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });

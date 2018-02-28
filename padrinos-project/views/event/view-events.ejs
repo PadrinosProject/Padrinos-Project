@@ -4,17 +4,16 @@
 <h1>Welcome <%= user.username%></h1> 
 
 <% } %>
-<span class="find">Find your next Padrino experiance</span>
+<span class="find">Find your next Padrino experience</span>
 <br>
 <div class="container">
 <div class="row">
-
+  <h1 class="here-are">Here are your events:</h1>
   <% if (event) {%>
-    <h1 class="here-are">Here are your events:</h1>
     <% event.forEach((party) => {%>
       <div class="col-sm-3">  
           <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src=<%=party.photo%> alt="Party Image">
+            <img class="card-img-top" src="<%= party.photo%>" alt="Party Image">
             <div class="card-body">
                 <h5 class="card-title"><%=party.category%></h5>
                 <p class="card-text"><%=party.date%></p>
@@ -23,11 +22,14 @@
           </div>
       </div>
     <% }) %>
-  <% } %>
+    <% } else { %>
+      <%console.log("Noevernt")%>
+    <h3>You currently have no events.</h3>
+    <a href="/new" class="btn btn-primary">Make an event!</a>
+    <% } %>
 
 </div>
 </div>
 
-  
   
   
