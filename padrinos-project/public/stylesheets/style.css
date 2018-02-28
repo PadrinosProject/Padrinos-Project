@@ -9,6 +9,12 @@ body {
 .form-control{
   width: 50%; 
 }
+
+
+.custom-control-input:disabled~.custom-control-label{
+  color:white;
+}
+
 /* Form Login/Signup =============================================================================*/
 
 h1{
