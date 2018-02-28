@@ -6,7 +6,7 @@ const ensureLoggedIn = require('connect-ensure-login');
 const multer  = require('multer');
 const upload  = multer({ dest: './public/uploads/event-image' });
 const Event   = require ("../models/Event.js");
-const User    = require("../models/User");
+const User    = require("../models/User.js");
 
 //Create Event
 
@@ -15,19 +15,19 @@ router.get('/new', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
 });
 
 router.post('/new', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
-  res.render('./event/view-events');
   const newEvent = new Event({
+    owner: req.user._id,
     name: req.body.eventTitle,
-    owner: user._id,
     category: req.body.eventCategory,
     date: req.body.usr_time,
+    location: req.body.location,
     photo: req.body.photo,
   });
-  newEvent.save((err) => {
-      if (err){ next(err); }
-      return next(null, newEvent);
-  });
+  newEvent.save()
+  .then(createdEvent => res.send(`Successfuly saved`))
+  .catch(err => res.render("error", {message:err}));
 });
+
 //View Event
 
 router.get('/view-events', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {

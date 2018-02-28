@@ -14,7 +14,7 @@
  </head>
  <body>
  <h2 class="createh2">Create your Event</h2>
- <form class="form3" action="">
+ <form class="form3" action="/new" method="POST">
    <label for="">Event Title</label>
    <br>
     <input type="text" name="eventTitle">
@@ -40,17 +40,17 @@
       </div>
    <br>
    <label for="">Starts</label>
-   <input id="date" type="date">
-   <input type="time" name="usr_time">
+   
+   <input type="date" name="usr_time">
    <br>
    <label for="">Ends</label>
-   <input type="time" name="usr_time">
+   <input type="time" name="endDate">
    <input id="date" type="date">
    <button type="submit">Set</button>
    <br>
    <label for="">Event Photo </label>
    <br>
-    <input type="file" name="photo"> <!--START HERE TOMORROW LANCE  -->
+    <input type="file" name="photo">
       <br>
        <div class="form-group">
       <label for="exampleFormControlTextarea1">Enter a brief description of your event</label>

@@ -4,9 +4,12 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const EventSchema = Schema({
-  owner:    String, //idUser
+  owner:    Schema.Types.ObjectId, //idUser
   category: String,
-  date:     Number,
+  date:     {
+    type:Date,
+    default: new Date()
+  }
   // guests:  [idUsers],
   // administradores:[idUsers],
   // location: [latitude, longitude]
