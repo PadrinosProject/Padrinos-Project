@@ -30,15 +30,24 @@ h1{
   position: relative;
   bottom: 100px;
 }
+.m-a{
+  padding-left: 20em;
+}
 
-h2{
+
+h2, .wel-to{
   font-family: 'Open Sans Condensed', sans-serif;  
   color:black;
   font-size: 80px;
   padding-block-start: 20px;
   padding-top: 50px;
   line-height: 1.2;
-  margin-left: 80px;
+  margin-left: 510px;
+
+}
+
+.wel-to{
+  margin-left:80px;
 }
 
 .sub-but{
@@ -52,12 +61,18 @@ h2{
   color: white;
 }
 .createh2{
-  padding-left: 295px;
+  margin-left: 370px;
   padding-top: 20px;
+}
+
+.next{
+  background-color: #00b3b3 !important;
+  border-color: #00b3b3;
+  border-radius: 0.2em;
 }
 .btn-primary{
   position: relative;
-  margin-right: 835px;
+  /* margin-right: 835px; */
   margin-bottom:130px;
   background-color: #00b3b3;
   border-color: #00b3b3;
@@ -70,6 +85,11 @@ h2{
   display: flex;
   padding-top: 4em;
   margin-left:130px;
+}
+
+.sign-form{
+  padding-left: 21em;
+
 }
 
 h6{
@@ -91,12 +111,20 @@ label{
 
 span{
   font-family: "Roboto", Roboto, arial, sans-serif;
-  margin-left: 40px;
+  margin-left: 400px;
 
 }
 
 a:link{
   text-decoration: none;
+}
+.btn-create-account{
+  position: relative;
+  background-color: #00b3b3;
+  border-color: #00b3b3;
+  border-radius: 0.2em;
+  margin-top:40px;
+
 }
 
 input[type=text], [type=password] {
