@@ -1,8 +1,12 @@
-<h1 class="ev-det">Your Event Details</h1>
+<!-- <h1 class="ev-det">Your Event Details</h1> -->
+<h5 class="card-title"><%=event.name%></h5>
+
+
+
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src=<%=event.photo%> alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title"><%=event.name%></h5>
+    <!-- <h5 class="card-title"><%=event.name%></h5> -->
     <p class="card-text"><%=event.description%></p>
   </div>
   <ul class="list-group list-group-flush">
@@ -45,6 +49,7 @@
 <!-- Share buttons for Facebook and Google -->
 
   <div id="fb-root"></div>
+<<<<<<< HEAD
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -54,3 +59,6 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <script src="https://apis.google.com/js/platform.js"></script>
+=======
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+>>>>>>> 9157965e724a51caea411d66e74766a45461e48b

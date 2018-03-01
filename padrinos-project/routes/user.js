@@ -17,7 +17,8 @@ router.get('/view-profile/', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => 
 //View Guest Profile
 
 router.get('/view-guest', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
-  res.render('user/guestProfile');
+
+  res.render('user/guestProfile', {user: req.user});
 });
 
 
