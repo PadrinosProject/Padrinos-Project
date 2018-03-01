@@ -64,7 +64,7 @@ router.get('/view-events', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
 
         res.render('event/view-events', {user: req.user, event:result}) 
       })
- ;
+ 
 });
 
 //view event details
@@ -73,7 +73,7 @@ router.get('/view-events/:id', ensureLoggedIn.ensureLoggedIn(), (req, res, next)
   Event.findById(req.params.id, (err, event) => {
     if (err)       { return next(err) }
     if (!event) { return next(new Error("404")) }
-    return res.render('event/event-details', { event: event })
+    return res.render('event/event-details', { event: event, user : req.user })
   });
 });
 

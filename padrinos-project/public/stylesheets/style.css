@@ -92,6 +92,15 @@ h2, .wel-to{
 
 }
 
+.guest-photo{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: relative;
+  bottom: 800px;
+  left: 850px;
+}
+
 h6{
   position: absolute;
   right: 450px;
