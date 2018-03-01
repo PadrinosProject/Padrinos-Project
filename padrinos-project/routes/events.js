@@ -26,15 +26,26 @@ router.post('/new', ensureLoggedIn.ensureLoggedIn(), upload.single('photo'), (re
     description: req.body.eventDescription
   });
   newEvent.save()
-  .then(createdEvent => res.redirect(`/make-list`))
+  .then(createdEvent => res.redirect(`/make-list/`))
   .catch(err => res.render('/new', {message:err}));
 });
 
 //Create List
 
 router.get('/make-list', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
-
+  Event.find(req.params.id, (err, event) => {
+    if (err)       { return next(err) }
+    if (!event) { return next(new Error("404")) }
+  });
   res.render('./event/make-list', {user: req.user, event: req.event});
+});
+
+router.post('/make-list', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
+  Event.find(req.params.id, (err, event) => {
+    if (err)       { return next(err) }
+    if (!event) { return next(new Error("404")) }
+  });
+  res.render('./event/invite-list', {user: req.user, event: req.event});
 });
 
 
@@ -50,7 +61,7 @@ router.get('/new', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
 router.get('/view-events', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
     Event.find({owner: req.user._id})
       .then(result => {
-        console.log(result)
+
         res.render('event/view-events', {user: req.user, event:result}) 
       })
  ;
@@ -62,7 +73,6 @@ router.get('/view-events/:id', ensureLoggedIn.ensureLoggedIn(), (req, res, next)
   Event.findById(req.params.id, (err, event) => {
     if (err)       { return next(err) }
     if (!event) { return next(new Error("404")) }
-    console.log(event)
     return res.render('event/event-details', { event: event })
   });
 });
