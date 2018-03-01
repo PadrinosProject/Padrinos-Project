@@ -8,7 +8,6 @@ function startMap() {
     disableDefaultUI: true
   });
   
-
   var searchBox = new google.maps.places.SearchBox(document.getElementById('search'));
   google.maps.event.addListener(searchBox, 'places_changed', function() {
     searchBox.set('map', null);
