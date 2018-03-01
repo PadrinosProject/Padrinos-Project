@@ -87,6 +87,10 @@ h2, .wel-to{
   margin-left:130px;
 }
 
+.ev-name{
+  margin:40px;
+}
+
 .sign-form{
   padding-left: 21em;
 
@@ -124,11 +128,9 @@ label{
   font-family: "Roboto", Roboto, arial, sans-serif;
 }
 
-span{
-  font-family: "Roboto", Roboto, arial, sans-serif;
-  margin-left: 400px;
 
-}
+
+
 
 a:link{
   text-decoration: none;
@@ -242,13 +244,13 @@ input[type=password]:focus {
 
 .invite{
   position: relative;
-  bottom: 850px;
+  bottom: 930px;
   left: 850px;
 }
 
 .ha{
   position: relative;
-  bottom: 770px;
+  bottom: 850px;
   left: 450px;
   margin-top: 30px;
   padding-top: 55px;
