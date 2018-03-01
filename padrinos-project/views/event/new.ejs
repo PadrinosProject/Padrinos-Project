@@ -14,6 +14,8 @@
  </head>
  <body>
  <h2 class="createh2">Create your Event</h2>
+ <img class="de-Perfil" src="<%= user.picPath %>"/>
+
  <form class="form3" action="/new" method="POST" enctype="multipart/form-data">
    <label for="">Event Title</label>
    <br>
@@ -36,9 +38,8 @@
      <br>
      <div class="custom-control custom-radio">
         <input type="radio" id="radio3" name="radioDisabled" id="customRadioDisabled" class="custom-control-input" disabled>
-        <label class="custom-control-label" for="customRadioDisabled">Click if your event It's private</label>
       </div>
-   <br>
+  
    <label for="">Starts</label>
    <input class="date" type="date" name="startDate">
    <input type="time" name="startTime">

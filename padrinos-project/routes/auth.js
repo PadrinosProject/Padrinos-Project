@@ -29,7 +29,6 @@ router.get('/signup', ensureLoggedOut(), (req, res) => {
     
 });
 
-
 router.post('/signup', ensureLoggedOut(),upload.single("myPhoto"), passport.authenticate('local-signup', {
     successRedirect: "/view-events",
     failureRedirect: "/signup",

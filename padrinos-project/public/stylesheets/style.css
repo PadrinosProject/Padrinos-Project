@@ -168,7 +168,7 @@ input[type=password]:focus {
 .home{
   position: absolute;
   top:220px;
-  right: 60px;
+  right: 90px;
 }
 
 
@@ -179,6 +179,26 @@ input[type=password]:focus {
 
 .card{
   margin: 100px 20px;
+}
+
+.custom-control{
+  bottom: 720px;
+  margin-left: 450px;
+}
+
+
+.invite{
+  position: relative;
+  bottom: 850px;
+  left: 850px;
+}
+
+.ha{
+  position: relative;
+  bottom: 770px;
+  left: 450px;
+  margin-top: 30px;
+  padding-top: 55px;
 }
 .profile-photo{
   border-radius: 50%;
@@ -201,7 +221,24 @@ input[type=password]:focus {
   margin-right: 40px;
  
 }
+.bg-light{
+  background-color: #00b3b3 !important;
+}
+.e-l{
+  margin-left:90px;
+  margin-top:80px;
+}
 
+.de-Perfil{
+  height: 100px;
+  border-radius: 50%;
+  width: 100px;
+  margin-left:550px;
+  margin-bottom: -30px;
+}
+.svg-inline--fa.fa-w-14{
+margin-left: 80px;
+}
 .find{
   font-size: 40px;
   font-weight: lighter;
@@ -212,7 +249,14 @@ input[type=password]:focus {
 .dePerfil{
   height: 100px;
   width: 100px;
-  border-radius: 50%
+  border-radius: 50%;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.dear{
+  margin-left: 90px;
+  
 }
 
 .ev-det{
@@ -260,6 +304,17 @@ input[type=password]:focus {
     position: relative;
     bottom: 90px;  
     left: 200px;
+    list-style: none;
+}
+
+.inst, .inst-left{
+  position: relative;
+  bottom: 190px;
+  left: 600px;
+
+}
+.inst-left{
+
 }
 
 li{
