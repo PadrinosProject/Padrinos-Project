@@ -6,18 +6,28 @@
   <body>
       <h2>Create Event list</h2>
       <p class="dear">Dear Padrino</p>
-      <label for="">Event List</label>
+      <label  class="e-l" for="">Event List</label>
       <br>
-      <ul style="list-style:none">
-        <li class="line-item">
-        <i class="fas fa-plus"></i><i class="fas fa-trash-alt"></i><input placeholder="add your item" type="text">
-        </li>
+      <span onclick="addLine()"><i class="fas fa-plus"></i></span><span onclick="removeLine()"><i class="fas fa-trash-alt"></i></span>
+      <ul id="item-list" style="list-style:none;">
+      <li><input placeholder="add your item" type="text"></li>
       </ul>
+      <button type="submit">Done</button>
+
+
+
+
+
+      <script type="text/javascript">
+        var addLine = function(){
+            var el = document.createElement('li');
+            el.innerHTML = '<li><input placeholder="add your item" type="text"></li>';
+            document.getElementById('item-list').appendChild(el);
+        }
+        var removeLine = function(){
+            var list = document.getElementById('item-list')
+            list.removeChild(list.childNodes[0]);
+        }
+      </script>
   </body> 
 </html>
-
-
-<label  class="e-l" for="">Event List</label>
-<br>
-<i class="fas fa-plus"></i>  <input placeholder="add your item" type="text">
-<button type="submit">Done</button>
