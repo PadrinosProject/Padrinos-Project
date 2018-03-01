@@ -1,7 +1,7 @@
 <% if (user) {%>
   <img class="dePerfil" src="<%= user.picPath %>"/>
   <br>
-  <h1>My Profile</h1> 
+  <h1><%= user.username %></h1> 
   <% } %>
 <div class="about-me">
   <ul class="snd">
@@ -9,9 +9,9 @@
 <li>My Town: MEXICO CITY</li>
 <li>Current Status: Party Hard!</li>
 <li>Padrino Since : 2016</li>
-  </ul>
-  <button class="inst">Edit My Info</button>
-  <button class="inst-left">Delete My Profile</button>
+ </ul>
+<button class="inst">Edit My Info</button>
+<button class="inst-left">Delete My Profile</button>
 </div>
 
 <div>
