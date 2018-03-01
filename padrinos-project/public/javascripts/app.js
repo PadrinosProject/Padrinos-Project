@@ -1,44 +1,50 @@
-function startMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {
-      lat:  19.397587,
-      lng: -99.171640
-    },
-    zoom: 12,
-    disableDefaultUI: true
-  });
+$(document).ready(function(){
+  function startMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: -33.8688, lng: 151.2195},
+      zoom: 13
+    });
+    var input = document.getElementById('search');
   
-
-  var searchBox = new google.maps.places.SearchBox(document.getElementById('search'));
-  google.maps.event.addListener(searchBox, 'places_changed', function() {
-    searchBox.set('map', null);
-
-    var places = searchBox.getPlaces();
-
-    var bounds = new google.maps.LatLngBounds();
-    var i, place;
-    for (i = 0; place = places[i]; i++) {
-      (function(place) {
-        var marker = new google.maps.Marker({
-
-          position: place.geometry.location
-        });
-        marker.bindTo('map', searchBox, 'map');
-        google.maps.event.addListener(marker, 'map_changed', function() {
-          if (!this.getMap()) {
-            this.unbindAll();
-          }
-        });
-        bounds.extend(place.geometry.location);
-
-      }(place));
-
-    }
-    map.fitBounds(bounds);
-    searchBox.set('map', map);
-    map.setZoom(Math.min(map.getZoom(),12));
-
-  });
-}
+  
+    var autocomplete = new google.maps.places.Autocomplete(input);
+  
+    // Bind the map's bounds (viewport) property to the autocomplete object,
+    // so that the autocomplete requests use the current map bounds for the
+    // bounds option in the request.
+    autocomplete.bindTo('bounds', map);
+  
+    var marker = new google.maps.Marker({
+      map: map,
+      anchorPoint: new google.maps.Point(0, -29)
+    });
+  
+    autocomplete.addListener('place_changed', function() {
+      marker.setVisible(false);
+      var place = autocomplete.getPlace();
+      if (!place.geometry) {
+        // User entered the name of a Place that was not suggested and
+        // pressed the Enter key, or the Place Details request failed.
+        window.alert("No details available for input: '" + place.name + "'");
+        return;
+      }
+  
+      // If the place has a geometry, then present it on a map.
+      if (place.geometry.viewport) {
+        map.fitBounds(place.geometry.viewport);
+      } else {
+        map.setCenter(place.geometry.location);
+        map.setZoom(17);  // Why 17? Because it looks good.
+      }
+      marker.setPosition(place.geometry.location);
+      marker.setVisible(true);
+  
+     
+  
+  
+    })
+  }
 
   startMap();
+
+})

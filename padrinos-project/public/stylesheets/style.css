@@ -92,6 +92,11 @@ h2, .wel-to{
 
 }
 
+.edit-btn, .add-new-btn, .remove-bnt{
+  position: relative;
+  bottom: 500px;
+}
+
 .guest-photo{
   height: 100px;
   width: 100px;
@@ -99,6 +104,7 @@ h2, .wel-to{
   position: relative;
   bottom: 800px;
   left: 850px;
+  margin: 10px;
 }
 
 h6{
