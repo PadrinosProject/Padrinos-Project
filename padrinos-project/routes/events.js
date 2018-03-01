@@ -10,6 +10,7 @@ const upload  = multer({dest: './public/uploads/event-image'});
 const Event   = require ("../models/Event.js");
 const User    = require("../models/User.js");
 const Item    = require("../models/Item.js");
+const Guest    = require("../models/Guest.js");
 
 //Create Event
 
@@ -47,22 +48,22 @@ router.post('/make-list/:id', ensureLoggedIn.ensureLoggedIn(), (req,res,next) =>
     });
   }
   Item.create(listItem, (err, result) => {
-    console.log(result)
-    res.redirect('/invite-guests')
+    res.redirect(`/invite-guests/${listItem.eventId}`)
   })
 });
 
 
 //Invite Guests
 
-router.get('/invite-guests', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
-  res.render('./event/invite-guests', {user: req.user});
+router.get('/invite-guests:id', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
+  res.render('./event/invite-guests', {user: req.user, event: req.params.id});
 });
 
-router.post('/make-list', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
-  const newItem = new Item({
+router.post('/invite-guests/:id', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
+
+  const newItem = new Guest({
     itemName: req.body.name,
-    quantity: req.body.quantity,
+    quantity: req.body.email,
     eventId: req.user._id,
     padrino: "",
   });
@@ -86,6 +87,11 @@ router.get('/view-events', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
 //View event details
 
 router.get('/view-events/:id', ensureLoggedIn.ensureLoggedIn(), (req, res, next) => {
+  //Item.findOne(req.params.eventId, (err, item) =>{
+  //  if (err)       { return next(err) }
+  //  if (!event) { return next(new Error("404")) }
+  //  return res.render('event/event-details', { item : item })
+  //});
   Event.findById(req.params.id, (err, event) => {
     if (err)       { return next(err) }
     if (!event) { return next(new Error("404")) }
