@@ -2,14 +2,11 @@ body {
   color: white;
   font-size: 19px;  
   background-color:	 #9f38a8;
-
-  
 }
 
 .form-control{
   width: 50%; 
 }
-
 
 .custom-control-input:disabled~.custom-control-label{
   color:white;
@@ -32,23 +29,53 @@ h1{
   margin-left:150px;
   position: relative;
   bottom: 100px;
-
+}
+.m-a{
+  padding-left: 20em;
 }
 
-h2{
+
+h2, .wel-to{
   font-family: 'Open Sans Condensed', sans-serif;  
   color:black;
   font-size: 80px;
   padding-block-start: 20px;
   padding-top: 50px;
   line-height: 1.2;
-  margin-left: 80px;
+  margin-left: 510px;
 
 }
 
+.wel-to{
+  margin-left:80px;
+}
+
+.sub-but{
+  color:white;
+}
+
+.btn-user-login{
+  background-color: #00b3b3;
+  border-color: #00b3b3;
+  border-radius: 0.2em;
+  color: white;
+}
 .createh2{
-  padding-left: 295px;
+  margin-left: 370px;
   padding-top: 20px;
+}
+
+.next{
+  background-color: #00b3b3 !important;
+  border-color: #00b3b3;
+  border-radius: 0.2em;
+}
+.btn-primary{
+  position: relative;
+  /* margin-right: 835px; */
+  margin-bottom:130px;
+  background-color: #00b3b3;
+  border-color: #00b3b3;
 }
 
 .sub1{
@@ -56,14 +83,27 @@ h2{
   color:white;
   font-size: 40px;
   display: flex;
-  padding-top: 2em;
+  padding-top: 4em;
+  margin-left:130px;
+}
 
+.sign-form{
+  padding-left: 21em;
 
+}
+
+.guest-photo{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: relative;
+  bottom: 800px;
+  left: 850px;
 }
 
 h6{
   position: absolute;
-  right: 370px;
+  right: 450px;
   bottom: 150px;
   font-family: "Roboto", Roboto, arial, sans-serif;
   font-weight: lighter;
@@ -72,8 +112,6 @@ h6{
 p{
   font-family: "Roboto", Roboto, arial, sans-serif;
   font-size: 25px;
-  /* display: flex; */
-
 }
 
 label{
@@ -82,12 +120,20 @@ label{
 
 span{
   font-family: "Roboto", Roboto, arial, sans-serif;
-  margin-left: 40px;
- 
+  margin-left: 400px;
+
 }
 
 a:link{
   text-decoration: none;
+}
+.btn-create-account{
+  position: relative;
+  background-color: #00b3b3;
+  border-color: #00b3b3;
+  border-radius: 0.2em;
+  margin-top:40px;
+
 }
 
 input[type=text], [type=password] {
@@ -115,12 +161,13 @@ input[type=password]:focus {
   float: right;
   position: relative;
   bottom: 170px;
+  padding-right: 7em;
 }
 
 
 .divider{
   position:absolute;
-  right: 380px;
+  right: 460px;
   top:10%;
   bottom:10%;
   border-left:1px solid white;
@@ -229,6 +276,10 @@ input[type=password]:focus {
   margin-top:80px;
 }
 
+.new-u{
+  margin-left: 130px;
+}
+
 .de-Perfil{
   height: 100px;
   border-radius: 50%;
@@ -274,6 +325,12 @@ margin-left: 80px;
   list-style-type: none;
   margin-top:150px;
   
+}
+
+.my-form{
+  padding-left: 7em;
+  
+
 }
 
 .myparty > li{
@@ -371,7 +428,6 @@ li{
   background-color: #5B7BD5;
   background-image: linear-gradient(#5B7BD5, #4864B1);
 }
-
 
 /* Login with Google button */
 .loginBtn--google {

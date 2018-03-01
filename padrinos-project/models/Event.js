@@ -11,7 +11,7 @@ const EventSchema = Schema({
     type:Date,
     default: new Date()
   },
-  //location: [latitude, longitude],
+  // location: [latitude, longitude],
   photo: String,
   description: String,
   guests: [],

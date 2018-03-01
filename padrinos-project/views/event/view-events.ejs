@@ -8,16 +8,16 @@
 <br>
 <div class="container">
 <div class="row">
-  <h1 class="here-are">Here are your events:</h1>
+  <h1 class="here-are">Upcomming events:</h1>
   <% if (event) {%>
     <% event.forEach((party) => {%>
-      <div class="col-sm-3">  
+      <div class="col-sm-4">  
           <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="<%= party.photo%>" alt="Party Image">
             <div class="card-body">
                 <h5 class="card-title"><%=party.category%></h5>
                 <p class="card-text"><%=party.date%></p>
-              <a href=<%=`/view-events/${party._id}`%> class="btn btn-primary">View Event</a>
+              <a href="<%=`/view-events/${party._id}`%>" class="btn btn-primary"/>View Event</a>
             </div> 
           </div>
       </div>
