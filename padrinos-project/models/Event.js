@@ -15,7 +15,7 @@ const EventSchema = Schema({
   photo: String,
   description: String,
   guests: [],
-  items: Schema.Types.ObjectId
+  items: []
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });

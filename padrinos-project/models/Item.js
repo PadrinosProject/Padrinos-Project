@@ -6,8 +6,8 @@ const Schema   = mongoose.Schema;
 const ItemSchema = Schema({
   itemName: String,
   quantity: Number,
-  eventId: String,
-  padrino: String //userId
+  eventId: { type: Schema.Types.ObjectId, ref: 'Event' },
+  padrino: { type: Schema.Types.ObjectId, ref: 'User' }//userId
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 }
