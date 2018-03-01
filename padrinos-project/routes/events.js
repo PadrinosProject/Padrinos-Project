@@ -7,7 +7,7 @@ const multer  = require('multer');
 const mongoose = require('mongoose');
 const upload  = multer({dest: './public/uploads/event-image'});
 
-const Event   = require ("../models/Event.js");
+const Event   = require("../models/Event.js");
 const User    = require("../models/User.js");
 const Item    = require("../models/Item.js");
 const Guest    = require("../models/Guest.js");
@@ -47,32 +47,36 @@ router.post('/make-list/:id', ensureLoggedIn.ensureLoggedIn(), (req,res,next) =>
       eventId: req.params.id
     });
   }
+  console.log(listItem)
   Item.create(listItem, (err, result) => {
-    res.redirect(`/invite-guests/${listItem.eventId}`)
+    res.redirect(`/invite-guests/${listItem[0].eventId}`)
   })
 });
+//always put more than 1 item on the list for demo purposes
 
 
 //Invite Guests
 
-router.get('/invite-guests:id', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
+router.get('/invite-guests/:id', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
   res.render('./event/invite-guests', {user: req.user, event: req.params.id});
 });
 
 router.post('/invite-guests/:id', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
-
-  const newItem = new Guest({
-    itemName: req.body.name,
-    quantity: req.body.email,
-    eventId: req.user._id,
-    padrino: "",
-  });
-  newItem.save()
-  .then(createdList => res.redirect(`/invite-guests`))
-  .catch(err => res.render('/make-list', {message:err}));
+  const guestList = [];
+  for(i = 0; i < req.body.name.length; i++){
+    console.log(guestList);
+    guestList.push({
+      guestName: req.body.name[i],
+      guestEmail: req.body.email[i],
+      eventId: req.params.id,
+      padrino: false
+    });
+  }
+  Guest.create(guestList, (err, result) => {
+    console.log(guestList);
+    res.redirect('/view-events')
+  })
 });
-
-
 //View Event
 
 router.get('/view-events', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
@@ -87,11 +91,6 @@ router.get('/view-events', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
 //View event details
 
 router.get('/view-events/:id', ensureLoggedIn.ensureLoggedIn(), (req, res, next) => {
-  //Item.findOne(req.params.eventId, (err, item) =>{
-  //  if (err)       { return next(err) }
-  //  if (!event) { return next(new Error("404")) }
-  //  return res.render('event/event-details', { item : item })
-  //});
   Event.findById(req.params.id, (err, event) => {
     if (err)       { return next(err) }
     if (!event) { return next(new Error("404")) }

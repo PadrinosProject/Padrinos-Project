@@ -8,7 +8,7 @@
       <p class="dear">Dear Padrino</p>
       <label  class="e-l" for="">Guest List</label>
       <br>
-      <form action="/invite-guests" method="POST">
+      <form action="/invite-guests/<%=event%>" method="POST">
       <span onclick="addLine()"><i class="fas fa-plus"></i></span><span onclick="removeLine()"><i class="fas fa-trash-alt"></i></span>
       <ul id="item-list" style="list-style:none;">
       <li><input placeholder="Guest Name" type="text" name="name"><input placeholder="E-mail" type="text" name="email"></li>
