@@ -5,7 +5,9 @@ const ensureLoggedIn = require('connect-ensure-login');
 //Multer for user/event image upload
 const multer  = require('multer');
 const upload  = multer({ dest: './public/uploads' });
-const User    = require("../models/User");
+const Event   = require ("../models/Event.js");
+const User    = require("../models/User.js");
+const Item    = require("../models/Item.js");
 
 
 router.get('/view-profile/', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {

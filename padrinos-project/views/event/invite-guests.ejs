@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Invite Guests</title>
+  </head>
+  <body>
+      <h2>Create Guest List</h2>
+      <p class="dear">Dear Padrino</p>
+      <label  class="e-l" for="">Guest List</label>
+      <br>
+      <form action="/make-list" method="POST">
+      <span onclick="addLine()"><i class="fas fa-plus"></i></span><span onclick="removeLine()"><i class="fas fa-trash-alt"></i></span>
+      <ul id="item-list" style="list-style:none;">
+      <li><input placeholder="name of guest" type="text" name="name"><input placeholder="guest email" type="text" name="quantity"></li>
+      </ul>
+      <button type="submit">Next</button>
+      </form>
+
+
+
+
+
+      <script type="text/javascript">
+        var addLine = function(){
+            var el = document.createElement('li');
+            el.innerHTML = '<input placeholder="add your item" type="text" name="name"><input placeholder="quantity" type="text" name="quantity">';
+            document.getElementById('item-list').appendChild(el);
+        }
+        var removeLine = function(){
+            var list = document.getElementById('item-list')
+            list.removeChild(list.childNodes[0]);
+        }
+      </script>
+
+
+  </body> 
+</html>

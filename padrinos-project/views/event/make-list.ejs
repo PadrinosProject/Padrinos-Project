@@ -8,11 +8,13 @@
       <p class="dear">Dear Padrino</p>
       <label  class="e-l" for="">Event List</label>
       <br>
+      <form action="/make-list" method="POST">
       <span onclick="addLine()"><i class="fas fa-plus"></i></span><span onclick="removeLine()"><i class="fas fa-trash-alt"></i></span>
       <ul id="item-list" style="list-style:none;">
-      <li><input placeholder="add your item" type="text"></li>
+      <li><input placeholder="add your item" type="text" name="name"><input placeholder="quantity" type="text" name="quantity"></li>
       </ul>
-      <button type="submit">Done</button>
+      <button type="submit">Next</button>
+      </form>
 
 
 
@@ -21,7 +23,7 @@
       <script type="text/javascript">
         var addLine = function(){
             var el = document.createElement('li');
-            el.innerHTML = '<li><input placeholder="add your item" type="text"></li>';
+            el.innerHTML = '<input placeholder="add your item" type="text" name="name"><input placeholder="quantity" type="text" name="quantity">';
             document.getElementById('item-list').appendChild(el);
         }
         var removeLine = function(){
@@ -29,5 +31,7 @@
             list.removeChild(list.childNodes[0]);
         }
       </script>
+
+
   </body> 
 </html>
