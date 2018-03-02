@@ -12,6 +12,28 @@ body {
 
 } */
 
+.items-container li{
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+.padrino-line{
+  border-bottom: 1px solid grey;
+}
+.whos-coming{
+  padding-top: 150px;
+} 
+
+.item-generated {
+  font-size: 1.75em;
+  display: inline;
+}
+.padrino-button {
+  background-color: white;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+
 .form-control{
   width: 50%;
 }
@@ -264,6 +286,7 @@ input[type=password]:focus {
 
 .cardd-title{
   padding: 20px;
+  font-size: 2em;
 }
 
 .home{
@@ -418,6 +441,12 @@ color: black;
     bottom: 90px;
     left: 200px;
     list-style: none;
+    font-size: 2em;
+}
+
+.snd li{
+  font-size: .60em;
+
 }
 
 .inst, .inst-left{
