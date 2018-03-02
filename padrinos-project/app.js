@@ -12,8 +12,9 @@ const axios        = require ('axios');
 const session      = require ('express-session');
 const MongoStore   = require('connect-mongo')(session);
 const flash        = require("connect-flash");
+const dotenv       = require('dotenv');
 
-mongoose.connect('mongodb://localhost/padrinos-project');
+mongoose.connect(process.env.DATABASE_URL);
 
 const app = express();
 
