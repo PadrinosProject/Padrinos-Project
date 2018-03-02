@@ -4,8 +4,20 @@ body {
   background-color:	 #9f38a8;
 }
 
+
+/* .home-background{
+  color:black;
+  opacity: .7 black;
+  
+  
+} */
+
 .form-control{
   width: 50%; 
+}
+
+.negritas{
+  margin-left: 400px;
 }
 
 .custom-control-input:disabled~.custom-control-label{
@@ -19,7 +31,7 @@ body {
 
 .becomea{
   position: relative;
-  top: 30px;
+  top: 100px;
   right: 70px;
 }
 /* Form Login/Signup =============================================================================*/
@@ -37,17 +49,20 @@ h1{
 
 h2, .wel-to{
   font-family: 'Open Sans Condensed', sans-serif;  
-  color:black;
+  color: black;
   font-size: 80px;
   padding-block-start: 20px;
   padding-top: 50px;
   line-height: 1.2;
   margin-left: 510px;
 
+  font-weight: 600;
 }
 
 .wel-to{
+  font-size: 100px;
   margin-left:80px;
+  margin-top: 60px;
 }
 
 .sub-but{
@@ -95,18 +110,39 @@ h2, .wel-to{
   padding-left: 21em;
 
 }
+.ev-list{
+margin-right: 350px;
+padding-top: 2em;
+}
 
 .edit-btn, .add-new-btn, .remove-bnt{
   position: relative;
   bottom: 500px;
 }
 
+.next-2, .next-3{
+  margin-left: 630px;
+  background-color: #00b3b3;
+  border-color: #00b3b3;
+  border-radius: .2em;
+}
+
+#item-list > li{
+  padding-left: 11em;
+  padding-right: 11em;
+}
+
+.gues-list{
+  margin-right:420px;
+  padding-top: 2.5em;
+
+}
 .guest-photo{
   height: 50px;
   width: 50px;
   border-radius: 50%;
   position: relative;
-  bottom: 800px;
+  bottom: 550px;
   left: 850px;
   margin: 10px;
 }
@@ -168,7 +204,8 @@ input[type=password]:focus {
 .entrar{
   float: right;
   position: relative;
-  bottom: 170px;
+  bottom: 190px;
+  /* top: 250px; */
   padding-right: 7em;
 }
 
@@ -210,9 +247,10 @@ input[type=password]:focus {
 
 .lorem{
   font-family: "Helvetica Neue","Segoe UI","Oxygen","Ubuntu","Cantarell","Open Sans",sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   color: white;
   margin-left:80px;
+  margin-top: 30px;
 }
 
 .wel{
@@ -297,6 +335,7 @@ input[type=password]:focus {
 }
 .svg-inline--fa.fa-w-14{
 margin-left: 80px;
+color: black;
 }
 .find{
   font-size: 40px;
@@ -388,6 +427,35 @@ li{
 
 }
 
+ .back-img, .guest-bg{
+  background-image: url('https://images.pexels.com/photos/296878/pexels-photo-296878.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb');
+  position:fixed; 
+  opacity: .8;
+  width: 100%;
+  height: 100%;
+} 
+
+.first-bg{
+  background-image: url('https://images.pexels.com/photos/398532/pexels-photo-398532.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb');
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: .7;
+  
+}
+
+/* .guest-bg{
+  background-image: url('https://images.pexels.com/photos/296878/pexels-photo-296878.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb');
+  width: 100%;
+  height: 100%;
+} */
+
+/* .log-bg{
+  background-image: url('https://images.pexels.com/photos/341858/pexels-photo-341858.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb');
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}  */
 /* Shared ================================================================================================*/
 .loginBtn {
   box-sizing: border-box;

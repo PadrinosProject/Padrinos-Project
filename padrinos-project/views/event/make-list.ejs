@@ -4,21 +4,17 @@
     <title>Add items for your padrinos</title>
   </head>
   <body>
-      <h2>Create Event list</h2>
-      <p class="dear">Dear Padrino</p>
-      <label  class="e-l" for="">Event List</label>
+    <div class="back-img">
+      <h2 class="ev-list">Create your Event list</h2>
       <br>
       <form action ="/make-list/<%=event%>" method="POST">
       <span onclick="addLine()"><i class="fas fa-plus"></i></span><span onclick="removeLine()"><i class="fas fa-trash-alt"></i></span>
       <ul id="item-list" style="list-style:none;">
       <li><input placeholder="add your item" type="text" name="name"><input placeholder="quantity" type="text" name="quantity"></li>
       </ul>
-      <button type="submit">Next</button>
+      <button class="next-2" type="submit">Next</button>
       </form>
-
-
-
-
+      </div>
 
       <script type="text/javascript">
         var addLine = function(){
