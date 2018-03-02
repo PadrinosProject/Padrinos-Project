@@ -14,7 +14,7 @@ const MongoStore   = require('connect-mongo')(session);
 const flash        = require("connect-flash");
 const dotenv       = require('dotenv');
 
-mongoose.connect(process.env.DATABASE_URL);
+mongoose.connect("mongodb://lance-meier:Ironhack2018@ds119486.mlab.com:19486/padrinos-db");
 
 const app = express();
 
