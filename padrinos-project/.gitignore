@@ -30,4 +30,3 @@ node_modules
 npm-debug.log
 
 # Upload files
-./public/uploads
