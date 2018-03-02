@@ -23,7 +23,8 @@ const viewEvent = require('./routes/events');
 const newEvent = require('./routes/events');
 const userController = require('./routes/user');
 const eventDetils = require('./routes/events')
-const makeList = require('./routes/events')
+const makeList = require('./routes/events');
+const itemController = require('./routes/item.js');
 
 //Session
 app.use(session({
@@ -66,6 +67,7 @@ app.use ('/', viewEvent);
 app.use('/', newEvent);
 app.use('/', userController);
 app.use('/', eventDetils);
+app.use('/item', itemController);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

@@ -9,7 +9,6 @@ const Event   = require ("../models/Event.js");
 const User    = require("../models/User.js");
 const Item    = require("../models/Item.js");
 
-
 router.get('/view-profile/', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
   res.render('user/profile', {user: req.user});
 });

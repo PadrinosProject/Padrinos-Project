@@ -20,10 +20,10 @@
  <form class="form3" action="/new" method="POST" enctype="multipart/form-data">
    <label for="">Event Title</label>
    <br>
-    <input type="text" name="eventTitle">
+    <input type="text" name="eventTitle" required>
      <div class="form-group">
       <label for="exampleFormControlSelect1">Event type</label>
-      <select class="form-control" id="exampleFormControlSelect1" name="eventCategory">
+      <select class="form-control" id="exampleFormControlSelect1" name="eventCategory" required>
         <option>Birthday Party</option>
         <option>BBQ</option>
         <option>XV años</option>
@@ -35,26 +35,26 @@
 
    <label for="">Enter Event Location</label> 
    <br>
-   <input id="search" type="text" placeholder="put your address" name="location">
+   <input id="search" type="text" placeholder="put your address" name="location" required>
    <div id="map"></div>
      <br>
   
    <label for="">Starts</label>
-   <input class="date" type="date" name="startDate">
-   <input type="time" name="startTime">
+   <input class="date" type="date" name="startDate" required>
+   <input type="time" name="startTime" required>
    <br>
    <label for="">Ends</label>
-   <input type="date" name="endDate">
-   <input type="time" name="endTime">
+   <input type="date" name="endDate" required>
+   <input type="time" name="endTime" required>
    <br>
    <label for="">Event Photo </label>
-    <input type="file" name="photo">
+    <input type="file" name="photo" required>
       <br>
        <div class="form-group">
       <label for="exampleFormControlTextarea1">Enter a brief description of your event</label>
       <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="eventDescription"></textarea>
     </div>
-    <button  class="next"type="submit">Next Step</button>
+    <button class="next" type="submit">Next Step</button>
   </form>
 
   <script
