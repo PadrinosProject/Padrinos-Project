@@ -36,22 +36,6 @@ router.post('/signup', ensureLoggedOut(),upload.single("myPhoto"), passport.auth
     passReqToCallback: true
   }));
 
-//upload photo
-  var upload = multer({ dest: './public/uploads/' });
-
-  router.post('/upload', upload.single('photo'), function(req, res){
-    const pic = new Picture({
-      name: req.body.name,
-      path: `/uploads/${req.file.filename}`,
-      originalName: req.file.originalname
-    });
-  
-    pic.save((err) => {
-        res.redirect('/profile');
-    });
-  });
-  
-
 
 //Facebook Auth
 router.get("/auth/facebook", passport.authenticate("facebook"));
