@@ -1,0 +1,33 @@
+<% if (user) {%>
+<img class="dePerfil" src="<%= user.picPath %>"/>
+<br>
+<h1>Welcome <%= user.username%></h1> 
+
+<% } %>
+<span class="find">Find your next Padrino experience</span>
+<div class="container">
+<div class="row">
+  <h1 class="here-are">Upcoming events:</h1>
+  <% if (event) {%>
+    <% event.forEach((party) => {%>
+      <div class="col-sm-4">  
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="<%= party.photo%>" alt="Party Image">
+            <div class="card-body">
+                <h5 class="card-title"><%=party.category%></h5>
+                <p class="card-text"><%=party.date%></p>
+              <a href="<%=`/view-events/${party._id}`%>" class="btn btn-primary"/>View Event</a>
+            </div> 
+          </div>
+      </div>
+    <% }) %>
+    <% } else { %>
+    <h3>You currently have no events.</h3>
+    <a href="/new" class="btn btn-primary">Make an event!</a>
+    <% } %>
+
+</div>
+</div>
+
+  
+  

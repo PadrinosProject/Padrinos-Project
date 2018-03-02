@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add items for your padrinos</title>
+  </head>
+  <body>
+    <div class="back-img">
+      <h2 class="ev-list">Create your Event list</h2>
+      <!-- <h2>Create Event list</h2> -->
+      <p class="dear">You've laid out your event, <br>now make a list of what's needed<br> to make it the best one ever! <br> (example: Guacamole, 1 Big Bowl) </p>
+      <!-- <label class="e-l" for="">Event List</label> -->
+      <br>
+      <form action ="/make-list/<%=event%>" method="POST">
+      <span onclick="addLine()"><i class="fas fa-plus"></i></span><span onclick="removeLine()"><i class="fas fa-trash-alt"></i></span>
+      <ul id="item-list" style="list-style:none;">
+      <li><input placeholder="add your item" type="text" name="name" required>
+        <input placeholder="quantity" type="number" name="quantity" required></li>
+      </ul>
+      <button class="next-2" type="submit">Next</button>
+      </form>
+      </div>
+
+      <script type="text/javascript">
+        var addLine = function(){
+            var el = document.createElement('li');
+            el.innerHTML = '<input placeholder="add your item" type="text" name="name" required><input placeholder="quantity" type="number" name="quantity" required>';
+            document.getElementById('item-list').appendChild(el);
+        }
+        var removeLine = function(){
+            var list = document.getElementById('item-list')
+            list.removeChild(list.childNodes[0]);
+        }
+      </script>
+  </body> 
+</html>
