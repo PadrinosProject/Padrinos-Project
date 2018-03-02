@@ -29,8 +29,8 @@ router.post('/new', ensureLoggedIn.ensureLoggedIn(), upload.single('photo'), (re
     description: req.body.eventDescription
   });
   newEvent.save()
-  .then(createdEvent => res.redirect(`/make-list/${createdEvent._id}`))
-  .catch(err => res.render('/new', {message:err}));
+    .then(createdEvent => res.redirect(`/make-list/${createdEvent._id}`))
+    .catch(err => res.render('/new', {message:err}));
 });
 
 //Create List
@@ -38,6 +38,7 @@ router.post('/new', ensureLoggedIn.ensureLoggedIn(), upload.single('photo'), (re
 router.get('/make-list/:id', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
   res.render('./event/make-list', {user: req.user, event: req.params.id});
 });
+
 router.post('/make-list/:id', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
   const listItem = [];
   for(i = 0; i < req.body.name.length; i++) {
@@ -82,7 +83,6 @@ router.post('/invite-guests/:id', ensureLoggedIn.ensureLoggedIn(), (req,res,next
 router.get('/view-events', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
     Event.find({owner: req.user._id})
       .then(result => {
-
         res.render('event/view-events', {user: req.user, event:result}) 
       })
  
@@ -90,12 +90,21 @@ router.get('/view-events', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
 
 //View event details
 
-router.get('/view-events/:id', ensureLoggedIn.ensureLoggedIn(), (req, res, next) => {
-  Event.findById(req.params.id, (err, event) => {
-    if (err)       { return next(err) }
-    if (!event) { return next(new Error("404")) }
-    return res.render('event/event-details', { event: event, user : req.user })
-  });
+//ITEM MODEL : eventId: { type: Schema.Types.ObjectId, ref: 'Event' },
+//GUEST MODEL : eventId: { type: Schema.Types.ObjectId, ref: 'Event' },
+
+router.get('/view-events/:idEvent', ensureLoggedIn.ensureLoggedIn(), (req, res, next) => {
+  Event.findById(req.params.idEvent)
+    .then(result1 =>{
+      Item.find({eventId: req.params.idEvent})
+        .then(result2 =>{
+          Guest.find({eventId: req.params.idEvent})
+            .then(result3 => {
+              res.render('event/event-details', { event: result1, user : req.user, item: result2, guest: result3 })
+            })
+        })
+    })
 });
 
 module.exports = router;
+

@@ -7,7 +7,7 @@ const ItemSchema = Schema({
   itemName: String,
   quantity: Number,
   eventId: { type: Schema.Types.ObjectId, ref: 'Event' },
-  padrino: { type: Schema.Types.ObjectId, ref: 'User' }//userId
+  padrino: String
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 }

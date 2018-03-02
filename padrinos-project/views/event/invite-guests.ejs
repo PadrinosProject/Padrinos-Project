@@ -10,7 +10,7 @@
       <form action="/invite-guests/<%=event%>" method="POST">
       <span onclick="addLine()"><i class="fas fa-plus"></i></span><span onclick="removeLine()"><i class="fas fa-trash-alt"></i></span>
       <ul id="item-list" style="list-style:none;">
-      <li><input placeholder="Guest Name" type="text" name="name"><input placeholder="E-mail" type="text" name="email"></li>
+      <li><input placeholder="Guest Name" type="text" name="name" required><input placeholder="E-mail" type="text" name="email" required></li>
       </ul>
       <button class="next-3" type="submit">Next</button>
       </form>
@@ -20,7 +20,7 @@
       <script type="text/javascript">
         var addLine = function(){
             var el = document.createElement('li');
-            el.innerHTML = '<input placeholder="Guest Name" type="text" name="name"><input placeholder="E-mail" type="text" name="email">';
+            el.innerHTML = '<input placeholder="Guest Name" type="text" name="name" required><input placeholder="E-mail" type="text" name="email" required>';
             document.getElementById('item-list').appendChild(el);
         }
         var removeLine = function(){
@@ -28,7 +28,5 @@
             list.removeChild(list.childNodes[0]);
         }
       </script>
-
-
   </body> 
 </html>

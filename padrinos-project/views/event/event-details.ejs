@@ -1,5 +1,5 @@
 <!-- <h1 class="ev-det">Your Event Details</h1> -->
-<h5 class="ev-name"><%=event.name%></h5>
+<h5 class="card-title"><%=event.name%></h5>
 
 
 
@@ -22,14 +22,41 @@
   </div>
 </div>
 
-<!-- <p class="ha">Request to Padrino</p> -->
+
+
+
+<p class="ha">Request to Padrino</p>
 <div class="custom-control custom-checkbox">
     <input type="checkbox" class="custom-control-input" id="customCheck1">
     <label class="custom-control-label" for="customCheck1">Tienda de campaña</label>
-  </div>
+</div>
 
-<!-- <p class="invite"> Who's comming?</p> -->
+<div id="items-container">
+  <h3>Event items needed</h3>
+  <ul id="items-list">
+  <%for(i = 0; i < item.length; i++) { %>
+    <li>NEEDED:  <%=item[i].itemName%>  ::::   How many? <%=item[i].quantity%></li>
+    <form action="/item/<%=item[i]._id%>" method="POST">
+    <button>Become Padrino</button>
+    </form>
+        <% if(! item[i].padrino) {%>
+          <p>Missing padrino!</p>
+        <%} else {%>
+          <p>Padrino:<%=item[i].padrino%></p>
+        <%}%>
+    <%}%>
+  </ul>
+</div>
+
 <!-- <button id="emailMe" href="mailto:example@website.com">e-mail me</button> -->
+<div id="guests-container">
+  <p class="invite"> Who's coming?</p>
+    <ul id="guests-list">
+    <% for (i = 0; i < guest.length; i++) { %>
+      <li>Name: <%=guest[i].guestName%>  ::::   <a href="mailto:<%=guest[i].guestEmail%>?Subject=Padrino%20event" target="_top"><button>Email Guest</button></a></li>
+      <%}%>
+    </ul>
+  </div>
 
 
 <img class="guest-photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBa6DAHfU2MzBPob6gAQiQKMkjH2L6E_grJm4JhQe2zOJWjGrP" alt=""> 
@@ -42,7 +69,7 @@
 <br>
 <img class="guest-photo" src="http://cdn.newsapi.com.au/image/v1/164a0bc422cf83935a37edbf194bfc11" alt="">
 
-<!-- <button type="button" class="btn btn-danger">Invite via email</button> -->
+<button type="button" class="btn btn-danger">Invite via email</button>
 
 
 
@@ -53,4 +80,4 @@
 <!-- Share buttons for Facebook and Google -->
 
   <div id="fb-root"></div>
-<script src="https://apis.google.com/js/platform.js" ></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
