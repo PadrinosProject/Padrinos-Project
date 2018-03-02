@@ -29,16 +29,7 @@ const makeList = require('./routes/events');
 const itemController = require('./routes/item.js');
 
 //Session
-app.use(session({
-  secret: "our-passport-local-strategy-app",
-  resave: true,
-  saveUninitialized: true
-}));
 
-app.use(function(req,res,next){
-  res.locals.user = req.user;
-  next();
-});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -59,6 +50,13 @@ app.use(layouts);
 //I added this for layouts
 app.set('layout', 'layouts/main-layout');
 
+
+app.use(session({
+  secret: 'ironfundingdev',
+  resave: false,
+  saveUninitialized: true,
+  store: new MongoStore( { mongooseConnection: mongoose.connection })
+}));
 //Passport config
 require('./config/passport')(app);
 
