@@ -1,7 +1,5 @@
 <!-- <h1 class="ev-det">Your Event Details</h1> -->
-<h5 class="card-title"><%=event.name%></h5>
-
-
+<h5 class="cardd-title"><%=event.name%></h5>
 
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src=<%=event.photo%> alt="Card image cap">
@@ -17,26 +15,22 @@
   <div class="card-body">
     <div class="g-plus" data-action="share">Share</div>
     <!-- <div class="fb-share-button" data-href="http://localhost:3000/new" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A3000%2Fnew&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div> -->
-
-
   </div>
 </div>
-
-
-
 
 <p class="ha">Request to Padrino</p>
 <div class="custom-control custom-checkbox">
     <input type="checkbox" class="custom-control-input" id="customCheck1">
-    <label class="custom-control-label" for="customCheck1">Tienda de campaña</label>
+    <!-- <label class="custom-control-label" for="customCheck1">Tienda de campaña</label> -->
 </div>
 
 <div id="items-container">
-  <h3>Event items needed</h3>
+  <h3 class="needed">Event items needed</h3>
   <ul id="items-list">
   <%for(i = 0; i < item.length; i++) { %>
     <li>NEEDED:  <%=item[i].itemName%>  ::::   How many? <%=item[i].quantity%></li>
     <form action="/item/<%=item[i]._id%>" method="POST">
+
     <button>Become Padrino</button>
     </form>
         <% if(! item[i].padrino) {%>
@@ -50,7 +44,7 @@
 
 <!-- <button id="emailMe" href="mailto:example@website.com">e-mail me</button> -->
 <div id="guests-container">
-  <p class="invite"> Who's coming?</p>
+  <!-- <p class="invite"> Who's coming?</p> -->
     <ul id="guests-list">
     <% for (i = 0; i < guest.length; i++) { %>
       <li>Name: <%=guest[i].guestName%>  ::::   <a href="mailto:<%=guest[i].guestEmail%>?Subject=Padrino%20event" target="_top"><button>Email Guest</button></a></li>
@@ -59,20 +53,15 @@
   </div>
 
 
-<img class="guest-photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBa6DAHfU2MzBPob6gAQiQKMkjH2L6E_grJm4JhQe2zOJWjGrP" alt=""> 
+<img class="guest-photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBa6DAHfU2MzBPob6gAQiQKMkjH2L6E_grJm4JhQe2zOJWjGrP" alt="">
 <br>
 <img class="guest-photo" src="http://cdn.newsapi.com.au/image/v1/164a0bc422cf83935a37edbf194bfc11" alt="">
 <br>
 <img class="guest-photo" src="http://ctg.greatergood.net/clickToGive/images/takeaction/campaigns/BeCrueltyFree_250x250.jpg?cb=1363194833056" alt="">
 <br>
-<img class="guest-photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBa6DAHfU2MzBPob6gAQiQKMkjH2L6E_grJm4JhQe2zOJWjGrP" alt=""> 
+<img class="guest-photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBa6DAHfU2MzBPob6gAQiQKMkjH2L6E_grJm4JhQe2zOJWjGrP" alt="">
 <br>
 <img class="guest-photo" src="http://cdn.newsapi.com.au/image/v1/164a0bc422cf83935a37edbf194bfc11" alt="">
-
-<button type="button" class="btn btn-danger">Invite via email</button>
-
-
-
 
 <!-- <button class="edit-btn">Edit</button>
 <button class="add-new-btn">Add New</button>
