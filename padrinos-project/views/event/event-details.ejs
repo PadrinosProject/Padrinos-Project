@@ -35,14 +35,14 @@
   <h3>Event items needed</h3>
   <ul id="items-list">
   <%for(i = 0; i < item.length; i++) { %>
-    <li>What do we need?   <%=item[i].itemName%>  |||   How many? <%=item[i].quantity%></li>
+    <li>NEEDED:  <%=item[i].itemName%>  ::::   How many? <%=item[i].quantity%></li>
     <form action="/item/<%=item[i]._id%>" method="POST">
-    <button>Request Padrino</button>
+    <button>Become Padrino</button>
     </form>
         <% if(! item[i].padrino) {%>
           <p>Missing padrino!</p>
         <%} else {%>
-          <p><%=item[i].padrino%></p>
+          <p>Padrino:<%=item[i].padrino%></p>
         <%}%>
     <%}%>
   </ul>
@@ -53,7 +53,7 @@
   <p class="invite"> Who's coming?</p>
     <ul id="guests-list">
     <% for (i = 0; i < guest.length; i++) { %>
-      <li>Name: <%=guest[i].guestName%>  |||   <a href="mailto:<%=guest[i].email%>?Subject=Padrino%20event" target="_top"><button>Email Guest</button></a></li>
+      <li>Name: <%=guest[i].guestName%>  ::::   <a href="mailto:<%=guest[i].guestEmail%>?Subject=Padrino%20event" target="_top"><button>Email Guest</button></a></li>
       <%}%>
     </ul>
   </div>

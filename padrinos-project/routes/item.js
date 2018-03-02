@@ -10,7 +10,7 @@ router.post('/:itemID', ensureLoggedIn.ensureLoggedIn(), (req,res,next) => {
   console.log(req.params.itemID)
   console.log(req.user)
   const update = {
-    padrino:req.user._id
+    padrino:req.user.username
   }
     Item.findByIdAndUpdate(req.params.itemID, update, function (err,result) {
       console.log(result)
